@@ -3,6 +3,10 @@ import { useCart } from '~/stores/cart'
 
 // cart
 const cart = useCart()
+
+// funcs
+const { reset } = cart
+const checkout = () => {}
 </script>
 
 <template>
@@ -50,10 +54,13 @@ const cart = useCart()
                 {{ $getCurrentCurrency().symbol + cart.getPriceMenuItem(item) }}
               </div>
             </div>
+            <div v-if="cart.menus.length === 0">
+              <div class="text-center">Cart is empty</div>
+            </div>
           </div>
           <div class="flex space-x-2 justify-end">
-            <Button size="sm" type="danger" text="Reset" />
-            <Button size="sm" text="Checkout" />
+            <Button size="sm" type="danger" text="Reset" @click="reset" />
+            <Button size="sm" text="Checkout" @click="checkout" />
           </div>
         </div>
       </div>

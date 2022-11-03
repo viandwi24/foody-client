@@ -1,8 +1,8 @@
 export default defineNuxtPlugin(({ provide }) => {
   provide('getCurrentCurrency', () => {
     return {
-      symbol: '$',
-      code: 'USD',
+      symbol: 'Rp.',
+      code: 'IDR',
     }
   })
 })

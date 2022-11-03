@@ -29,5 +29,16 @@ export const useCart = defineStore('cart', {
     reset() {
       this.menus = []
     },
+    increment(item: CartStateMenu) {
+      this.menus.find((m) => m.menu.id === item.menu.id)!.quantity++
+    },
+    decrement(item: CartStateMenu) {
+      const index = this.menus.findIndex((m) => m.menu.id === item.menu.id)
+      if (this.menus[index].quantity > 1) {
+        this.menus[index].quantity--
+      } else {
+        this.menus.splice(index, 1)
+      }
+    },
   },
 })

@@ -3,7 +3,7 @@ import { useLoading } from '~/stores/loading'
 export default defineNuxtPlugin(({ provide }) => {
   provide('getCurrentCurrency', () => {
     return {
-      symbol: 'Rp.',
+      symbol: 'Rp',
       code: 'IDR',
     }
   })

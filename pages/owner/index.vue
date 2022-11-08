@@ -1,0 +1,84 @@
+<script lang="ts" setup>
+import {
+  TabGroup,
+  TabList,
+  Tab as HeadlessUiTab,
+  TabPanels,
+  TabPanel,
+} from '@headlessui/vue'
+import { capitalize } from '~/utils/str'
+const screen = useScreen()
+
+// composable
+// const { t } = useLang()
+
+// compiler macro
+definePageMeta({
+  layout: 'dashboard',
+})
+useHead(() => ({
+  titleTemplate: '',
+  title: capitalize('Foody Owner'),
+}))
+
+// menus
+const subpages = shallowRef([
+  {
+    key: 'menu',
+    name: 'Menu',
+    component: resolveComponent('DashboardPagesMenu'),
+  },
+  {
+    key: 'order',
+    name: 'Orders',
+    component: resolveComponent('DashboardPagesMenu'),
+  },
+  {
+    key: 'transaction',
+    name: 'Transactions',
+    component: resolveComponent('DashboardPagesMenu'),
+  },
+])
+</script>
+
+<template>
+  <PageWrapper>
+    <PageHeader>
+      <PageTitle text="Owner Dashboard" class="capitalize" />
+    </PageHeader>
+    <PageBody>
+      <PageSection>
+        <TabGroup
+          as="div"
+          class="flex flex-col md:flex-row md:space-x-4"
+          :vertical="screen.higherThan(Size.MEDIUM)"
+        >
+          <TabList class="w-full md:w-1/6 flex md:flex-col rounded-lg mb-2">
+            <HeadlessUiTab
+              v-for="page in subpages"
+              :key="page.key"
+              v-slot="{ selected }"
+              as="template"
+            >
+              <button
+                :class="[
+                  'md:w-full text-left px-3 py-1.5 rounded py-2.5 text-sm leading-5 transition-all hover:bg-gray-200 hover:text-slate-900 dark:hover:bg-white/[0.12] dark:hover:text-white',
+                  selected
+                    ? 'font-extrabold bg-gray-200 dark:bg-white/[0.12]'
+                    : 'text-slate-800 dark:text-gray-400',
+                ]"
+              >
+                {{ page.name }}
+              </button>
+            </HeadlessUiTab>
+          </TabList>
+          <TabPanels class="flex-1">
+            <TabPanel v-for="item in subpages" :key="item.key">
+              <component :is="item.component" />
+            </TabPanel>
+          </TabPanels>
+        </TabGroup>
+      </PageSection>
+    </PageBody>
+  </PageWrapper>
+</template>

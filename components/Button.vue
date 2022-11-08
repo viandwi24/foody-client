@@ -38,6 +38,8 @@ const styles = reactive<{
     'text-slate-800 bg-gray-200 border-gray-200 hover:bg-gray-300 dark:text-white dark:border-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700',
   danger:
     'text-white bg-red-500 border-red-500 hover:bg-red-400 dark:text-white dark:border-red-500 dark:bg-red-500 dark:hover:bg-red-400',
+  warning:
+    'text-white bg-yellow-500 border-yellow-500 hover:bg-yellow-400 dark:text-white dark:border-yellow-500 dark:bg-yellow-500 dark:hover:bg-yellow-400',
   opposite:
     'text-white bg-gray-800 hover:bg-white hover:text-gray-800 hover:border-gray-900 dark:text-gray-800 dark:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:border-white',
 })
@@ -47,7 +49,7 @@ const sizes = reactive<{
   lg: 'h-13 px-8 text-lg rounded-lg',
   md: 'h-10 px-6 text-base rounded',
   sm: 'h-9 px-4 text-sm rounded',
-  xs: 'h-6 px-3 text-xs rounded',
+  xs: 'h-6 px-2 text-xs rounded',
 })
 
 // state

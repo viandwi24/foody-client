@@ -35,7 +35,7 @@ const styles = reactive<{
   none: '',
   primary: 'text-white bg-primary-500 hover:bg-primary-400 border-primary-500',
   secondary:
-    'text-slate-800 bg-gray-200 border-gray-200 hover:bg-gray-300 dark:text-white dark:border-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700',
+    'text-slate-700 bg-blue-500 hover:bg-blue-400 border-blue-500 dark:text-gray-100 dark:bg-blue-600 dark:hover:bg-blue-700 dark:border-blue-600',
   danger:
     'text-white bg-red-500 border-red-500 hover:bg-red-400 dark:text-white dark:border-red-500 dark:bg-red-500 dark:hover:bg-red-400',
   warning:

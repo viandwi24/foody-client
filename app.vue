@@ -12,7 +12,7 @@
       >
         <div class="flex-1 flex justify-center items-center relative">
           <div
-            class="h-40 w-40 rounded bg-white text-gray-800 flex flex-col justify-center items-center space-y-4"
+            class="h-40 w-40 rounded bg-white text-gray-800 dark:bg-slate-800 dark:text-gray-100 flex flex-col justify-center items-center space-y-4"
           >
             <IconEosIcons:loading class="text-6xl text-primary" />
             <div>LOADING...</div>

@@ -31,12 +31,12 @@ const subpages = shallowRef([
   {
     key: 'order',
     name: 'Orders',
-    component: resolveComponent('DashboardPagesMenu'),
+    component: resolveComponent('DashboardPagesOrder'),
   },
   {
     key: 'transaction',
     name: 'Transactions',
-    component: resolveComponent('DashboardPagesMenu'),
+    component: resolveComponent('DashboardPagesTransactions'),
   },
 ])
 </script>

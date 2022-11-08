@@ -3,20 +3,17 @@ import { Menu } from '~/types'
 import { useLoading } from '~/stores/loading'
 const columns = ref([
   { key: 'no', label: 'No', data: '$index' },
+  { key: 'code', label: 'Transaction Code', data: 'code' },
   { key: 'name', label: 'Name', data: 'name' },
-  {
-    key: 'desc',
-    label: 'Description',
-    builder: (data: any) => data.description,
-  },
+  { key: 'code', label: 'Total Price', data: 'totalPrice' },
   {
     key: 'action',
     label: '...',
   },
 ])
-const rows = ref<Menu[]>([
-  { id: 1, name: 'test', description: 'test', image: '', price: 0 },
-  { id: 2, name: 'test2', description: 'test2', image: '', price: 0 },
+const rows = ref([
+  { id: 1, code: ' 78asd0m28w12u12sef', name: 'test', totalPrice: 10000 },
+  { id: 2, code: ' 78asd0m28w12u12sef', name: 'test2', totalPrice: 10000 },
 ])
 
 // funcs
@@ -37,15 +34,35 @@ onMounted(() => {
   <Card class="mb-4">
     <Table :columns="columns" :rows="rows">
       <template #row-col-action="{ rawItem }">
-        <div class="flex">
-          <!-- <Button class="mr-2" size="sm" @click="edit(rawItem)">
+        <div class="flex-1 flex">
+          <Button
+            class="mr-2 flex items-center justify-center"
+            size="xs"
+            type="secondary"
+            @click="edit(rawItem)"
+          >
+            <IconFa:list class="text-xs" />
+            <span class="ml-2">See Detail</span>
+          </Button>
+          <!-- <Button class="mr-2" size="xs" type="warning" @click="edit(rawItem)">
             <IconFa:pencil class="text-xs" />
           </Button> -->
-          <Button class="mr-2" size="xs" type="warning" @click="edit(rawItem)">
-            <IconFa:pencil class="text-xs" />
+          <Button
+            class="mr-2 flex items-center justify-center"
+            size="xs"
+            @click="edit(rawItem)"
+          >
+            <IconFa:check class="text-xs" />
+            <span class="ml-2">Process</span>
           </Button>
-          <Button class="mr-2" size="xs" type="danger" @click="edit(rawItem)">
-            <IconFa:trash class="text-xs" />
+          <Button
+            class="mr-2 flex items-center justify-center"
+            size="xs"
+            type="danger"
+            @click="edit(rawItem)"
+          >
+            <IconFa:times class="text-xs" />
+            <span class="ml-2">Decline</span>
           </Button>
         </div>
       </template>

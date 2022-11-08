@@ -17,7 +17,14 @@ declare module '@vue/runtime-core' {
     IconEosIcons: loading': typeof import('~icons/eos-icons/loading')['default']
     'IconEosIcons:loading': typeof import('~icons/eos-icons/loading')['default']
     IconFa: trash': typeof import('~icons/fa/trash')['default']
+    'IconFa:check': typeof import('~icons/fa/check')['default']
+    'IconFa:eye': typeof import('~icons/fa/eye')['default']
+    'IconFa:list': typeof import('~icons/fa/list')['default']
+    'IconFa:listA;t': typeof import('~icons/fa/list-a;t')['default']
+    'IconFa:listAlt': typeof import('~icons/fa/list-alt')['default']
     'IconFa:pencil': typeof import('~icons/fa/pencil')['default']
+    'IconFa:table': typeof import('~icons/fa/table')['default']
+    'IconFa:times': typeof import('~icons/fa/times')['default']
     'IconFa:trash': typeof import('~icons/fa/trash')['default']
     IconFaSolid: ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
@@ -39,6 +46,7 @@ declare module '@vue/runtime-core' {
     'IconUil:times': typeof import('~icons/uil/times')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    t: typeof import('~icons/fa/list-a
   }
 
 }

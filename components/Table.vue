@@ -41,7 +41,7 @@ const getFormattedData = (index: number, row: any, col: Column) => {
 </script>
 
 <template>
-  <table class="border-collapse table-fixed w-full">
+  <table class="border-collapse table-auto w-full">
     <thead
       class="text-xs font-semibold uppercase text-gray-400 bg-gray-50 dark:bg-slate-800"
     >

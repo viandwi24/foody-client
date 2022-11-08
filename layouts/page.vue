@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useCart } from '~/stores/cart'
+import { useLoading } from '~/stores/loading'
 
 // cart
 const cart = useCart()
@@ -11,6 +12,11 @@ const { reset, increment, decrement } = cart
 const isShowModalCheckout = ref(false)
 const toggleCheckout = () => {
   isShowModalCheckout.value = !isShowModalCheckout.value
+}
+
+// checkout
+const checkout = () => {
+  useLoading().show()
 }
 </script>
 
@@ -106,9 +112,12 @@ const toggleCheckout = () => {
                 <div class="text-center">Cart is empty</div>
               </div>
             </div>
-            <div class="flex space-x-2 justify-end">
+            <div v-if="!isShowModalCheckout" class="flex space-x-2 justify-end">
               <Button size="sm" type="danger" text="Reset" @click="reset" />
               <Button size="sm" text="Checkout" @click="toggleCheckout" />
+            </div>
+            <div v-else class="flex space-x-2 justify-end">
+              <Button size="sm" text="Checkout Now" @click="checkout" />
             </div>
           </div>
         </div>

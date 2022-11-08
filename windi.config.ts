@@ -72,7 +72,8 @@ export default defineConfig({
         slate: colors.slate,
       },
       fontFamily: {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        mono: ['Fira Mono', ...defaultTheme.fontFamily.mono],
       },
     },
   },

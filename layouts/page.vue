@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { useCart } from '~/stores/cart'
 import { useLoading } from '~/stores/loading'
+import { IApp } from '~/utils/app'
+
+// state
+const app = useState<IApp>('app')
 
 // cart
 const cart = useCart()
@@ -15,9 +19,41 @@ const toggleCheckout = () => {
 }
 
 // checkout
+const ticketElm = ref<HTMLDivElement>()
+const ticketElmRotate = ref({
+  x: 0,
+  y: 0,
+})
+const isCheckoutSuccess = ref(false)
 const checkout = () => {
   useLoading().show()
+  setTimeout(() => {
+    useLoading().hide()
+    isCheckoutSuccess.value = true
+    reset()
+  }, 2000)
 }
+const close = () => {
+  isCheckoutSuccess.value = false
+  toggleCheckout()
+}
+const onMouseMove = function (e: { clientY: number; clientX: number }) {
+  if (ticketElm.value && isCheckoutSuccess.value) {
+    const { x, y, width, height } = ticketElm.value.getBoundingClientRect()
+    const centerPoint = { x: x + width / 2, y: y + height / 2 }
+    const rotateX = (e.clientY - centerPoint.y) * 0.008
+    const rotateY = (e.clientX - centerPoint.x) * -0.008
+    ticketElmRotate.value = { x: rotateX, y: rotateY }
+  }
+}
+
+// lifecycle
+onMounted(() => {
+  document.addEventListener('mousemove', onMouseMove)
+})
+onBeforeUnmount(() => {
+  document.removeEventListener('mousemove', onMouseMove)
+})
 </script>
 
 <template>
@@ -72,7 +108,7 @@ const checkout = () => {
               +
             </span>
           </div>
-          <div class="px-6 pb-4 flex flex-col space-y-4">
+          <div class="px-6 pb-4 flex flex-col space-y-8">
             <div class="flex flex-col space-y-1">
               <div
                 v-for="item in cart.menus"
@@ -117,9 +153,72 @@ const checkout = () => {
               <Button size="sm" text="Checkout" @click="toggleCheckout" />
             </div>
             <div v-else class="flex space-x-2 justify-end">
+              <Button
+                size="sm"
+                type="danger"
+                text="Cancel"
+                @click="toggleCheckout"
+              />
               <Button size="sm" text="Checkout Now" @click="checkout" />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- checkout -->
+    <div
+      v-if="isCheckoutSuccess"
+      class="fixed top-0 left-0 flex w-screen h-screen z-50 bg-primary-600"
+    >
+      <div
+        class="flex-1 relative flex flex-col justify-center items-center space-y-8"
+      >
+        <div class="text-4xl font-bold text-center">
+          YOUR CHECKOUT SUCCESS CREATE!!!
+        </div>
+        <!-- ticket -->
+        <div
+          ref="ticketElm"
+          class="w-120 h-50 rounded-lg shadow bg-white text-slate-800 flex px-6 py-4 relative"
+          :style="{
+            transform: `perspective(1000px) rotateX(${ticketElmRotate.x}deg) rotateY(${ticketElmRotate.y}deg)`,
+          }"
+        >
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="font-mono font-bold text-xl">CHECKOUT TICKET</div>
+              <div class="font-semibold">{{ app.name }}</div>
+            </div>
+            <div class="flex flex-col">
+              <div>
+                <span class="font-semibold mr-2">Name :</span>
+                <span class="font-mono">Guest</span>
+              </div>
+              <div>
+                <span class="font-semibold mr-2">Total :</span>
+                <span>{{ $getCurrentCurrency().symbol + 50000 }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="pr-2 flex">
+            <img
+              src="https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.example.com&chs=180x180&choe=UTF-8&chld=L|2"
+              alt="Qrcode"
+              class="inline-block"
+            />
+          </div>
+          <div
+            class="absolute right-0 transform mr-7 font-bold font-mono text-gray-600"
+            :style="{
+              top: '50%',
+              transform: 'translate(50%, -50%) rotate(90deg)',
+            }"
+          >
+            #12312312312312
+          </div>
+        </div>
+        <div>
+          <Button size="sm" text="Back to Catalog" @click="close" />
         </div>
       </div>
     </div>

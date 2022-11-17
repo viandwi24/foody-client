@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     IconClarity: timesLine': typeof import('~icons/clarity/times-line')['default']
     'IconClarity:timesCircleSolid': typeof import('~icons/clarity/times-circle-solid')['default']
     'IconClarity:timesLine': typeof import('~icons/clarity/times-line')['default']
+    IconEosIcons: loading': typeof import('~icons/eos-icons/loading')['default']
     'IconEosIcons:loading': typeof import('~icons/eos-icons/loading')['default']
     IconFa: trash': typeof import('~icons/fa/trash')['default']
     'IconFa:check': typeof import('~icons/fa/check')['default']

@@ -1,11 +1,4 @@
 <script lang="ts" setup>
-import {
-  TransitionRoot,
-  TransitionChild,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from '@headlessui/vue'
 import { Menu } from '~/types'
 import { useLoading } from '~/stores/loading'
 const columns = ref([
@@ -29,11 +22,27 @@ const rows = ref<Menu[]>([
 // funcs
 const edit = (item: Menu) => {
   console.log('edit', item)
+  modaMenuToggle('edit')
+}
+const deleteItem = (item: Menu) => {
+  console.log('delete', item)
+  modaDeleteToggle()
 }
 
 // modal
+type ModalMenuMode = 'add' | 'edit'
+const modalMenuMode = ref<ModalMenuMode>('add')
 const modalMenuShow = ref(false)
-const modaMenuToggle = () => (modalMenuShow.value = !modalMenuShow.value)
+const modaMenuToggle = (mode: ModalMenuMode = 'add') => {
+  modalMenuShow.value = !modalMenuShow.value
+  modalMenuMode.value = mode
+}
+
+// modal
+const modalDeleteShow = ref(false)
+const modaDeleteToggle = () => {
+  modalDeleteShow.value = !modalDeleteShow.value
+}
 
 // lifecycle
 onMounted(() => {
@@ -52,7 +61,7 @@ onMounted(() => {
         size="sm"
         type="primary"
         text="New Product"
-        @click="modaMenuToggle"
+        @click="modaMenuToggle('add')"
       />
     </div>
     <Card class="mb-4">
@@ -70,7 +79,12 @@ onMounted(() => {
             >
               <IconFa:pencil class="text-xs" />
             </Button>
-            <Button class="mr-2" size="xs" type="danger" @click="edit(rawItem)">
+            <Button
+              class="mr-2"
+              size="xs"
+              type="danger"
+              @click="deleteItem(rawItem)"
+            >
               <IconFa:trash class="text-xs" />
             </Button>
           </div>
@@ -105,83 +119,62 @@ onMounted(() => {
       </CardFooter> -->
     </Card>
     <ClientOnly>
-      <TransitionRoot appear :show="modalMenuShow" as="template">
-        <Dialog as="div" class="relative z-10" @close="modaMenuToggle">
-          <TransitionChild
-            as="template"
-            enter="duration-300 ease-out"
-            enter-from="opacity-0"
-            enter-to="opacity-100"
-            leave="duration-200 ease-in"
-            leave-from="opacity-100"
-            leave-to="opacity-0"
-          >
-            <div class="fixed inset-0 bg-black bg-opacity-25" />
-          </TransitionChild>
-          <div class="fixed inset-0 overflow-y-auto">
-            <div
-              class="flex min-h-full items-center justify-center p-4 text-center"
-            >
-              <TransitionChild
-                as="template"
-                enter="duration-300 ease-out"
-                enter-from="opacity-0 scale-95"
-                enter-to="opacity-100 scale-100"
-                leave="duration-200 ease-in"
-                leave-from="opacity-100 scale-100"
-                leave-to="opacity-0 scale-95"
-              >
-                <DialogPanel
-                  class="w-full max-w-md transform overflow-hidden rounded-lg px-8 py-8 text-left align-middle shadow-xl transition-all bg-white dark:bg-slate-800"
-                >
-                  <DialogTitle
-                    as="h3"
-                    class="text-xl font-medium font-bold leading-6 text-gray-900 dark:text-white mt-0"
-                  >
-                    New Menu
-                  </DialogTitle>
-                  <div class="flex flex-col space-y-4 mt-2">
-                    <div class="flex flex-col space-y-2">
-                      <label>Name</label>
-                      <FormTextInput />
-                    </div>
-                    <div class="flex flex-col space-y-2">
-                      <label>Description</label>
-                      <FormTextAreaInput />
-                    </div>
-                    <div class="flex flex-col space-y-2">
-                      <label>Price</label>
-                      <FormTextInput type="number">
-                        <template #prefix-disabled>
-                          <span class="flex-1 px-4 py-2">{{
-                            $getCurrentCurrency().symbol
-                          }}</span>
-                        </template>
-                      </FormTextInput>
-                    </div>
-                  </div>
-                  <div class="flex justify-end space-x-4 mt-4">
-                    <Button
-                      class="capitalize"
-                      size="sm"
-                      type="danger"
-                      text="Cancel"
-                      @click="modaMenuToggle"
-                    />
-                    <Button
-                      class="capitalize"
-                      size="sm"
-                      type="primary"
-                      text="Save"
-                      @click="modaMenuToggle"
-                    />
-                  </div>
-                </DialogPanel>
-              </TransitionChild>
-            </div>
+      <Modal
+        :title="`${modalMenuMode === 'add' ? 'Add' : 'Edit'} Menu`"
+        :show="modalMenuShow"
+      >
+        <div class="flex flex-col space-y-4 mt-2">
+          <div class="flex flex-col space-y-2">
+            <label>Name</label>
+            <FormTextInput />
           </div>
-        </Dialog>
-      </TransitionRoot>
+          <div class="flex flex-col space-y-2">
+            <label>Description</label>
+            <FormTextAreaInput />
+          </div>
+          <div class="flex flex-col space-y-2">
+            <label>Price</label>
+            <FormTextInput type="number">
+              <template #prefix-disabled>
+                <span class="flex-1 px-4 py-2">{{
+                  $getCurrentCurrency().symbol
+                }}</span>
+              </template>
+            </FormTextInput>
+          </div>
+        </div>
+        <div class="flex justify-end space-x-4 mt-4">
+          <Button
+            class="capitalize"
+            size="sm"
+            type="danger"
+            text="Cancel"
+            @click="modaMenuToggle"
+          />
+          <Button
+            class="capitalize"
+            size="sm"
+            type="primary"
+            text="Save"
+            @click="modaMenuToggle"
+          />
+        </div>
+      </Modal>
+      <Modal title="Confirm" :show="modalDeleteShow">
+        <div class="mt-2">
+          <p>Are you sure want to delete this item?</p>
+        </div>
+        <div class="flex justify-end space-x-4 mt-4">
+          <Button
+            class="capitalize"
+            size="sm"
+            type="opposite"
+            text="Cancel"
+            @click="modaDeleteToggle"
+          />
+          <Button class="capitalize" size="sm" type="danger" text="Delete" />
+        </div>
+      </Modal>
     </ClientOnly>
   </div>
 </template>

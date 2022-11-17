@@ -1,15 +1,27 @@
+<script lang="ts" setup>
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+} from '@headlessui/vue'
+
+defineProps({
+  show: {
+    type: Boolean,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+})
+const emit = defineEmits(['close'])
+</script>
 <template>
-  <div class="fixed inset-0 flex items-center justify-center">
-    <button
-      type="button"
-      @click="openModal"
-      class="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-    >
-      Open dialog
-    </button>
-  </div>
-  <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal" class="relative z-10">
+  <TransitionRoot appear :show="show" as="template">
+    <Dialog as="div" class="relative z-10" @close="emit('close')">
       <TransitionChild
         as="template"
         enter="duration-300 ease-out"
@@ -21,7 +33,6 @@
       >
         <div class="fixed inset-0 bg-black bg-opacity-25" />
       </TransitionChild>
-
       <div class="fixed inset-0 overflow-y-auto">
         <div
           class="flex min-h-full items-center justify-center p-4 text-center"
@@ -36,30 +47,15 @@
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
+              class="w-full max-w-md transform overflow-hidden rounded-lg px-8 py-8 text-left align-middle shadow-xl transition-all bg-white dark:bg-slate-800"
             >
               <DialogTitle
                 as="h3"
-                class="text-lg font-medium leading-6 text-gray-900"
+                class="text-xl font-medium font-bold leading-6 text-gray-900 dark:text-white mt-0"
               >
-                Payment successful
+                {{ title }}
               </DialogTitle>
-              <div class="mt-2">
-                <p class="text-sm text-gray-500">
-                  Your payment has been successfully submitted. We’ve sent you
-                  an email with all of the details of your order.
-                </p>
-              </div>
-
-              <div class="mt-4">
-                <button
-                  type="button"
-                  class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                  @click="closeModal"
-                >
-                  Got it, thanks!
-                </button>
-              </div>
+              <slot />
             </DialogPanel>
           </TransitionChild>
         </div>

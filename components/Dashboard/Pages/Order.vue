@@ -47,9 +47,34 @@ const rows2 = ref([
   },
 ])
 
+// modal
+type ModalConfirmMode = 'decline' | 'cancel' | 'finish' | 'process'
+const modalConfirmShow = ref(false)
+const modalConfirmMode = ref<ModalConfirmMode>('decline')
+const modalConfirmToggle = (mode: ModalConfirmMode) => {
+  modalConfirmShow.value = !modalConfirmShow.value
+  modalConfirmMode.value = mode || modalConfirmMode.value
+}
+
 // funcs
-const edit = (item: Menu) => {
-  console.log('edit', item)
+const detail = (item: Menu) => {
+  console.log('detail', item)
+}
+const decline = (item: Menu) => {
+  console.log('decline', item)
+  modalConfirmToggle('decline')
+}
+const cancel = (item: Menu) => {
+  console.log('cancel', item)
+  modalConfirmToggle('cancel')
+}
+const process = (item: Menu) => {
+  console.log('process', item)
+  modalConfirmToggle('process')
+}
+const finish = (item: Menu) => {
+  console.log('finish', item)
+  modalConfirmToggle('finish')
 }
 
 // lifecycle
@@ -74,7 +99,7 @@ onMounted(() => {
               class="mr-2 flex items-center justify-center"
               size="xs"
               type="secondary"
-              @click="edit(rawItem)"
+              @click="detail(rawItem)"
             >
               <IconFa:list class="text-xs" />
               <span class="ml-2">See Detail</span>
@@ -85,7 +110,7 @@ onMounted(() => {
             <Button
               class="mr-2 flex items-center justify-center"
               size="xs"
-              @click="edit(rawItem)"
+              @click="process(rawItem)"
             >
               <IconFa:check class="text-xs" />
               <span class="ml-2">Process</span>
@@ -94,7 +119,7 @@ onMounted(() => {
               class="mr-2 flex items-center justify-center"
               size="xs"
               type="danger"
-              @click="edit(rawItem)"
+              @click="decline(rawItem)"
             >
               <IconFa:times class="text-xs" />
               <span class="ml-2">Decline</span>
@@ -114,7 +139,7 @@ onMounted(() => {
               class="mr-2 flex items-center justify-center"
               size="xs"
               type="secondary"
-              @click="edit(rawItem)"
+              @click="detail(rawItem)"
             >
               <IconFa:list class="text-xs" />
               <span class="ml-2">See Detail</span>
@@ -125,7 +150,7 @@ onMounted(() => {
             <Button
               class="mr-2 flex items-center justify-center"
               size="xs"
-              @click="edit(rawItem)"
+              @click="finish(rawItem)"
             >
               <IconFa:check class="text-xs" />
               <span class="ml-2">Finish</span>
@@ -134,7 +159,7 @@ onMounted(() => {
               class="mr-2 flex items-center justify-center"
               size="xs"
               type="danger"
-              @click="edit(rawItem)"
+              @click="cancel(rawItem)"
             >
               <IconFa:times class="text-xs" />
               <span class="ml-2">Cancel</span>
@@ -143,5 +168,52 @@ onMounted(() => {
         </template>
       </Table>
     </Card>
+    <ClientOnly>
+      <Modal
+        title="Confirm"
+        :show="modalConfirmShow"
+        @close="modalConfirmToggle(modalConfirmMode)"
+      >
+        <div class="mt-2">
+          <p>
+            Are you sure want to
+            <span v-if="modalConfirmMode === 'decline'">Decline</span>
+            <span v-else-if="modalConfirmMode === 'cancel'"
+              >Cancel Processing</span
+            >
+            <span v-else-if="modalConfirmMode === 'finish'"
+              >Finish Processing</span
+            >
+            <span v-else-if="modalConfirmMode === 'process'">Process</span>
+            this order ?
+          </p>
+        </div>
+        <div class="flex justify-end space-x-4 mt-4">
+          <Button
+            class="capitalize"
+            size="sm"
+            type="opposite"
+            text="Cancel"
+            @click="modalConfirmToggle(modalConfirmMode)"
+          />
+          <template v-if="['decline', 'cancel'].includes(modalConfirmMode)">
+            <Button
+              class="capitalize"
+              size="sm"
+              type="danger"
+              :text="modalConfirmMode"
+            />
+          </template>
+          <template v-else>
+            <Button
+              class="capitalize"
+              size="sm"
+              type="primary"
+              :text="modalConfirmMode"
+            />
+          </template>
+        </div>
+      </Modal>
+    </ClientOnly>
   </div>
 </template>

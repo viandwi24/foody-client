@@ -2,12 +2,16 @@
 import { useCart } from '~/stores/cart'
 import { useLoading } from '~/stores/loading'
 import { IApp } from '~/utils/app'
+import { Api } from '~~/services/api'
+import { Transaction } from '~/type'
 
 // state
 const app = useState<IApp>('app')
 
-// cart
+// composables
 const cart = useCart()
+const loading = useLoading()
+const api = useApi()
 
 // funcs
 const { reset, increment, decrement } = cart
@@ -19,19 +23,38 @@ const toggleCheckout = () => {
 }
 
 // checkout
+const transaction = ref<Transaction | undefined>()
 const ticketElm = ref<HTMLDivElement>()
 const ticketElmRotate = ref({
   x: 0,
   y: 0,
 })
 const isCheckoutSuccess = ref(false)
-const checkout = () => {
-  useLoading().show()
-  setTimeout(() => {
-    useLoading().hide()
-    isCheckoutSuccess.value = true
-    reset()
-  }, 2000)
+const checkout = async () => {
+  loading.show()
+
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
+  try {
+    const res = await api.create(
+      Api.Transaction.Create({
+        user_name: 'guest',
+        menus: [
+          ...cart.menus.map((menu) => ({
+            id: menu.menu.id,
+            qty: menu.quantity,
+          })),
+        ],
+      })
+    )
+    if (res.status === 201) {
+      transaction.value = res.data.data
+      isCheckoutSuccess.value = true
+      reset()
+    }
+  } catch (error) {}
+
+  loading.hide()
 }
 const close = () => {
   isCheckoutSuccess.value = false
@@ -167,7 +190,7 @@ onBeforeUnmount(() => {
     </div>
     <!-- checkout -->
     <div
-      v-if="isCheckoutSuccess"
+      v-if="isCheckoutSuccess && transaction"
       class="fixed top-0 left-0 flex w-screen h-screen z-50 bg-primary-600"
     >
       <div
@@ -192,11 +215,11 @@ onBeforeUnmount(() => {
             <div class="flex flex-col">
               <div>
                 <span class="font-semibold mr-2">Name :</span>
-                <span class="font-mono">Guest</span>
+                <span class="font-mono">{{ transaction.user_name }}</span>
               </div>
               <div>
                 <span class="font-semibold mr-2">Total :</span>
-                <span>{{ $getCurrentCurrency().symbol + 50000 }}</span>
+                <span>{{ $formatCurrency(transaction.total) }}</span>
               </div>
             </div>
           </div>
@@ -214,7 +237,7 @@ onBeforeUnmount(() => {
               transform: 'translate(50%, -50%) rotate(90deg)',
             }"
           >
-            #12312312312312
+            #{{ transaction.code }}
           </div>
         </div>
         <div>

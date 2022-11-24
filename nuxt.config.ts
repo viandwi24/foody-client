@@ -12,7 +12,11 @@ declare module '@nuxt/schema' {
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   // server side rendering mode
-  ssr: false,
+  // ssr: true,
+
+  components: {
+    global: true,
+  },
 
   // app
   app: {
@@ -41,7 +45,7 @@ export default defineNuxtConfig({
   ],
 
   // plugins
-  plugins: ['~/plugins/navbar.ts', '~/plugins/utils.ts'],
+  plugins: ['~/plugins/navbar.ts', '~/plugins/utils.ts', '~/plugins/toast.ts'],
 
   // build
   build: {

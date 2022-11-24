@@ -1,38 +1,128 @@
 <script lang="ts" setup>
-import { Menu } from '~/types'
+import { useToast } from 'vue-toastification'
+import { AxiosError } from 'axios'
+import { Menu } from '~~/type'
 import { useLoading } from '~/stores/loading'
+import { Api } from '~~/services/api'
+import { formatCurrency } from '~~/utils/curr'
+import Table from '~~/components/Table.vue'
+
+// composables
+const loading = useLoading()
+const api = useApi()
+const toast = useToast()
+
+// tables
+const table = ref<InstanceType<typeof Table> | null>(null)
+const apiGetMenu = Api.Menu.All()
 const columns = ref([
-  { key: 'no', label: 'No', data: '$index' },
-  { key: 'name', label: 'Name', data: 'name' },
+  // { key: 'no', label: 'No', data: '$index' },
+  { key: 'image', label: 'image' },
+  { key: 'menu', label: 'Menu' },
   {
-    key: 'desc',
-    label: 'Description',
-    builder: (data: any) => data.description,
+    key: 'price',
+    label: 'Price',
+    builder: (data: any) => formatCurrency(data.price || ''),
   },
   {
     key: 'action',
     label: '...',
   },
 ])
-const rows = ref<Menu[]>([
-  { id: 1, name: 'test', description: 'test', image: '', price: 0 },
-  { id: 2, name: 'test2', description: 'test2', image: '', price: 0 },
-])
 
 // funcs
+const newItem = () => {
+  menuModel.value = {
+    id: 0,
+    name: '',
+    description: '',
+    image: '',
+    price: 0,
+  }
+  modaMenuToggle('add')
+}
 const edit = (item: Menu) => {
   console.log('edit', item)
+  menuModel.value = {
+    id: item.id,
+    name: item.name,
+    description: item.description,
+    image: item.image,
+    price: item.price,
+  }
   modaMenuToggle('edit')
 }
-const deleteItem = (item: Menu) => {
+const confirmDelete = (item: Menu) => {
   console.log('delete', item)
-  modaDeleteToggle()
+  menuModel.value = {
+    id: item.id,
+    name: item.name,
+    description: item.description,
+    image: item.image,
+    price: item.price,
+  }
+  modalDeleteToggle()
+}
+const saveItem = async () => {
+  loading.show()
+
+  try {
+    if (modalMenuMode.value === 'add') {
+      const res = await api.create(Api.Menu.Create(menuModel.value))
+      if (res.status === 201) {
+        toast.success('Menu created successfully')
+        table.value?.fetch()
+      }
+    } else if (modalMenuMode.value === 'edit') {
+      const res = await api.create(
+        Api.Menu.Update(menuModel.value.id, menuModel.value)
+      )
+      if (res.status === 200) {
+        toast.success(`Menu ${menuModel.value.name} updated successfully`)
+        table.value?.fetch()
+      }
+    }
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      const cause = error.response?.data?.message || 'Unknown error'
+      toast.error(`cant save data : ${cause}`)
+    }
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  modaMenuToggle()
+  loading.hide()
+}
+const deleteItem = async () => {
+  loading.show()
+  try {
+    const res = await api.create(Api.Menu.Delete(menuModel.value.id))
+    if (res.status === 200) {
+      toast.success(`Menu ${menuModel.value.name} deleted`)
+      table.value?.fetch()
+    }
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      const cause = error.response?.data?.message || 'Unknown error'
+      toast.error(`cant save data : ${cause}`)
+    }
+  }
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  modalDeleteToggle()
+  loading.hide()
 }
 
 // modal
 type ModalMenuMode = 'add' | 'edit'
 const modalMenuMode = ref<ModalMenuMode>('add')
 const modalMenuShow = ref(false)
+const menuModel = ref<Menu>({
+  id: 0,
+  name: '',
+  description: '',
+  image: '',
+  price: 0,
+})
 const modaMenuToggle = (mode: ModalMenuMode = 'add') => {
   modalMenuShow.value = !modalMenuShow.value
   modalMenuMode.value = mode
@@ -40,16 +130,17 @@ const modaMenuToggle = (mode: ModalMenuMode = 'add') => {
 
 // modal
 const modalDeleteShow = ref(false)
-const modaDeleteToggle = () => {
+const modalDeleteToggle = () => {
   modalDeleteShow.value = !modalDeleteShow.value
 }
 
 // lifecycle
 onMounted(() => {
-  useLoading().show()
-  setTimeout(() => {
-    useLoading().hide()
-  }, 1000)
+  // console.log('mounted', table.value)
+  // loading.show()
+  // setTimeout(() => {
+  //   loading.hide()
+  // }, 1000)
 })
 </script>
 
@@ -61,16 +152,24 @@ onMounted(() => {
         size="sm"
         type="primary"
         text="New Product"
-        @click="modaMenuToggle('add')"
+        @click="newItem"
       />
     </div>
     <Card class="mb-4">
-      <Table :columns="columns" :rows="rows">
+      <Table ref="table" :columns="columns" :api="apiGetMenu">
+        <template #row-col-menu="{ rawItem }">
+          <div class="flex flex-col space-y-2">
+            <div>{{ rawItem.name }}</div>
+            <div class="text-xs text-gray-500 truncate">
+              {{ rawItem.description }}
+            </div>
+          </div>
+        </template>
+        <template #row-col-image="{ rawItem }">
+          <img :src="rawItem.image" class="w-20 h-20" />
+        </template>
         <template #row-col-action="{ rawItem }">
           <div class="flex">
-            <!-- <Button class="mr-2" size="sm" @click="edit(rawItem)">
-              <IconFa:pencil class="text-xs" />
-            </Button> -->
             <Button
               class="mr-2"
               size="xs"
@@ -83,40 +182,13 @@ onMounted(() => {
               class="mr-2"
               size="xs"
               type="danger"
-              @click="deleteItem(rawItem)"
+              @click="confirmDelete(rawItem)"
             >
               <IconFa:trash class="text-xs" />
             </Button>
           </div>
         </template>
       </Table>
-      <!-- <CardContent>
-        <CardTitle
-          class="capitalize"
-          :text="$t('pages.setting.sections.validate_username.title')"
-        />
-        <p class="mb-2">
-          {{ $t('pages.setting.sections.validate_username.description') }}
-        </p>
-      </CardContent> -->
-      <!-- <CardFooter
-        class="flex flex-col space-y-2 md:space-y-0 md:space-y md:flex-row items-center md:justify-between"
-      >
-        <p>
-          {{ $t('pages.setting.sections.validate_username.footer') }}
-          <Anchor
-            class="underline font-bold capitalize"
-            :text="$t('pages.setting.sections.validate_username.footer_link')"
-            href="https://docs.github.com/en/rest/users/users#get-a-user"
-          />
-        </p>
-        <Button
-          class="capitalize"
-          size="sm"
-          type="opposite"
-          :text="$t('pages.setting.sections.validate_username.footer_button')"
-        />
-      </CardFooter> -->
     </Card>
     <ClientOnly>
       <Modal
@@ -126,21 +198,25 @@ onMounted(() => {
         <div class="flex flex-col space-y-4 mt-2">
           <div class="flex flex-col space-y-2">
             <label>Name</label>
-            <FormTextInput />
+            <FormTextInput v-model="menuModel.name" />
           </div>
           <div class="flex flex-col space-y-2">
             <label>Description</label>
-            <FormTextAreaInput />
+            <FormTextAreaInput v-model="menuModel.description" />
           </div>
           <div class="flex flex-col space-y-2">
             <label>Price</label>
-            <FormTextInput type="number">
+            <FormTextInput v-model="menuModel.price" type="number">
               <template #prefix-disabled>
                 <span class="flex-1 px-4 py-2">{{
                   $getCurrentCurrency().symbol
                 }}</span>
               </template>
             </FormTextInput>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <label>Image</label>
+            <FormTextInput v-model="menuModel.image" />
           </div>
         </div>
         <div class="flex justify-end space-x-4 mt-4">
@@ -156,13 +232,13 @@ onMounted(() => {
             size="sm"
             type="primary"
             text="Save"
-            @click="modaMenuToggle"
+            @click="saveItem"
           />
         </div>
       </Modal>
       <Modal title="Confirm" :show="modalDeleteShow">
         <div class="mt-2">
-          <p>Are you sure want to delete this item?</p>
+          <p>Are you sure want to delete this menu ({{ menuModel.name }})?</p>
         </div>
         <div class="flex justify-end space-x-4 mt-4">
           <Button
@@ -170,9 +246,15 @@ onMounted(() => {
             size="sm"
             type="opposite"
             text="Cancel"
-            @click="modaDeleteToggle"
+            @click="modalDeleteToggle"
           />
-          <Button class="capitalize" size="sm" type="danger" text="Delete" />
+          <Button
+            class="capitalize"
+            size="sm"
+            type="danger"
+            text="Delete"
+            @click="deleteItem"
+          />
         </div>
       </Modal>
     </ClientOnly>

@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import { capitalize } from '~/utils/str'
-import { Menu } from '~/types'
+import { Menu } from '~~/type'
 import { useCart } from '~/stores/cart'
+import { Api } from '~~/services/api'
+import { useLoading } from '~~/stores/loading'
 
 // composable
 // const { t } = useLang()
+const api = useApi()
+const loading = useLoading()
 
 // compiler macro
 definePageMeta({
@@ -16,29 +20,23 @@ useHead(() => ({
 }))
 
 // data
-const menus = ref<Menu[]>([
-  {
-    id: 1,
-    name: 'Big Mac Kecil',
-    price: 50000,
-    description:
-      'paket makan dan minum, 1 burger, 1 kentang goreng dan 1 soft drink',
-    image:
-      'https://asset-a.grid.id/crop/8x43:1064x782/x/photo/2021/11/24/cara-beli-bigmac-cuma-rp1-penci-20211124091449.jpg',
-  },
-  {
-    id: 2,
-    name: 'Big Mac Medium',
-    price: 550000,
-    description:
-      'paket makan dan minum, 1 big burger, 1 kentang goreng dan 1 soft drink',
-    image:
-      'https://asset-a.grid.id/crop/8x43:1064x782/x/photo/2021/11/24/cara-beli-bigmac-cuma-rp1-penci-20211124091449.jpg',
-  },
-])
+const menus = ref<Menu[]>([])
 
 // cart
 const cart = useCart()
+
+// funcs
+const fetch = async () => {
+  loading.show()
+  const data = await api.create(Api.Menu.All())
+  menus.value = (data.data?.data as unknown as Menu[]) || []
+  loading.hide()
+}
+
+// lifecycle
+onMounted(() => {
+  fetch()
+})
 </script>
 
 <template>

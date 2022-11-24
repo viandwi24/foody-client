@@ -50,10 +50,10 @@ const subpages = shallowRef([
       <PageSection>
         <TabGroup
           as="div"
-          class="flex flex-col md:flex-row md:space-x-4"
+          class="flex flex-col"
           :vertical="screen.higherThan(Size.MEDIUM)"
         >
-          <TabList class="w-full md:w-1/6 flex md:flex-col rounded-lg mb-2">
+          <TabList class="w-auto md:w-1/6 flex space-x-4 rounded-lg mb-2">
             <HeadlessUiTab
               v-for="page in subpages"
               :key="page.key"
@@ -72,8 +72,12 @@ const subpages = shallowRef([
               </button>
             </HeadlessUiTab>
           </TabList>
-          <TabPanels class="flex-1">
-            <TabPanel v-for="item in subpages" :key="item.key">
+          <TabPanels class="flex-1 max-w-full">
+            <TabPanel
+              v-for="item in subpages"
+              :key="item.key"
+              class="max-w-full"
+            >
               <component :is="item.component" />
             </TabPanel>
           </TabPanels>

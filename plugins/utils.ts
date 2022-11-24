@@ -1,12 +1,9 @@
 import { useLoading } from '~/stores/loading'
+import { formatCurrency, getCurrentCurrency } from '~~/utils/curr'
 
 export default defineNuxtPlugin(({ provide }) => {
-  provide('getCurrentCurrency', () => {
-    return {
-      symbol: 'Rp',
-      code: 'IDR',
-    }
-  })
+  provide('getCurrentCurrency', getCurrentCurrency)
+  provide('formatCurrency', formatCurrency)
 
   // loading
   const loading = useLoading()
@@ -32,12 +29,14 @@ export interface LoadingReturn {
 declare module '#app' {
   interface NuxtApp {
     $getCurrentCurrency(): UtilsGetCurrentCurrencyReturn
+    $formatCurrency(value: number): string
     $loading: LoadingReturn
   }
 }
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $getCurrentCurrency(): UtilsGetCurrentCurrencyReturn
+    $formatCurrency(value: number): string
     $loading: LoadingReturn
   }
 }

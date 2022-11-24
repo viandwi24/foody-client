@@ -1,16 +1,19 @@
 <script lang="ts" setup>
-import { AxiosError } from 'axios'
 import { useToast } from 'vue-toastification'
-import { Transaction } from '~/type'
+import { AxiosError } from 'axios'
+import { Menu, Transaction } from '~~/type'
 import { useLoading } from '~/stores/loading'
-import { formatCurrency } from '~~/utils/curr'
 import { Api } from '~~/services/api'
-import Table from '~~/components/Table.vue'
+import { formatCurrency } from '~~/utils/curr'
+import { Table } from '~~/.nuxt/components'
 
 // composables
 const loading = useLoading()
-const toast = useToast()
 const api = useApi()
+const toast = useToast()
+
+// refs
+const transactionModel = ref<Transaction | undefined>()
 
 // tables1
 const table1 = ref<InstanceType<typeof Table> | null>(null)
@@ -49,11 +52,8 @@ const columns2 = ref([
   },
 ])
 
-// refs
-const transactionModel = ref<Transaction | undefined>()
-
 // modal
-type ModalConfirmMode = 'decline' | 'cancel' | 'finish' | 'process' | 'detail'
+type ModalConfirmMode = 'decline' | 'cancel' | 'finish' | 'process'
 const modalConfirmShow = ref(false)
 const modalConfirmMode = ref<ModalConfirmMode>('decline')
 const modalConfirmToggle = (mode: ModalConfirmMode) => {
@@ -62,29 +62,23 @@ const modalConfirmToggle = (mode: ModalConfirmMode) => {
 }
 
 // funcs
-const detail = (item: Transaction) => {
+const detail = (item: Menu) => {
   console.log('detail', item)
-  transactionModel.value = item
-  modalConfirmMode.value = 'detail'
 }
-const process = (item: Transaction) => {
+const process = (item: Menu) => {
   console.log('process', item)
-  transactionModel.value = item
   modalConfirmToggle('process')
 }
-const decline = (item: Transaction) => {
+const decline = (item: Menu) => {
   console.log('decline', item)
-  transactionModel.value = item
   modalConfirmToggle('decline')
 }
-const cancel = (item: Transaction) => {
+const cancel = (item: Menu) => {
   console.log('cancel', item)
-  transactionModel.value = item
   modalConfirmToggle('cancel')
 }
-const finish = (item: Transaction) => {
+const finish = (item: Menu) => {
   console.log('finish', item)
-  transactionModel.value = item
   modalConfirmToggle('finish')
 }
 const modalConfirm = async () => {
@@ -94,54 +88,33 @@ const modalConfirm = async () => {
 
   loading.show()
   await new Promise((resolve) => setTimeout(resolve, 1000))
-
-  try {
-    if (
-      (
-        ['process', 'cancel', 'decline', 'finish'] as ModalConfirmMode[]
-      ).includes(mode)
-    ) {
-      let status: 'pending' | 'processing' | 'finished' | 'declined' = 'pending'
-      let msg = ''
-
-      if (mode === 'process') {
-        status = 'processing'
-        msg = `Transaction ${item.code} has been processed`
-      } else if (mode === 'cancel') {
-        status = 'pending'
-        msg = `Transaction ${item.code} process has been canceled`
-      } else if (mode === 'decline') {
-        status = 'declined'
-        msg = `Transaction ${item.code} has been declined`
-      } else if (mode === 'finish') {
-        status = 'finished'
-        msg = `Transaction ${item.code} has been finished`
-      }
-
-      const res = await api.create(Api.Transaction.Update(item.id, { status }))
-      if (res.status === 200) {
-        toast.success(msg)
-      }
-    }
-  } catch (error) {
-    if (error instanceof AxiosError) {
-      const msg = error.response?.data?.message || 'Something went wrong'
-      toast.error(msg)
-    }
+  if (mode === 'process') {
+    // try {
+    //   const res = await api.create(
+    //     Api.Transaction.Update(item.id, { status: 'processing' })
+    //   )
+    //   if (res.status === 200) {
+    //     table1.value?.fetch()
+    //     table2.value?.fetch()
+    //     toast.success(`Transaction ${item.code} has been processed`)
+    //   }
+    // } catch (error) {
+    //   if (error instanceof AxiosError) {
+    //     const msg = error.response?.data?.message || 'Something went wrong'
+    //     toast.error(msg)
+    //   }
+    // }
   }
 
-  modalConfirmToggle(modalConfirmMode.value)
   loading.hide()
-  table1.value?.fetch()
-  table2.value?.fetch()
 }
 
 // lifecycle
 onMounted(() => {
-  // useLoading().show()
-  // setTimeout(() => {
-  //   useLoading().hide()
-  // }, 1000)
+  loading.show()
+  setTimeout(() => {
+    loading.hide()
+  }, 1000)
 })
 </script>
 
@@ -153,21 +126,6 @@ onMounted(() => {
       </CardContent>
       <Table ref="table1" :columns="columns" :api="api1">
         <template #row-col-action="{ rawItem }">
-          <TransactionDetailModal
-            :show="
-              transactionModel &&
-              modalConfirmMode === 'detail' &&
-              transactionModel.id === rawItem.id
-                ? true
-                : false
-            "
-            :transaction="transactionModel"
-            @close="
-              () => {
-                transactionModel = undefined
-              }
-            "
-          />
           <div class="flex-1 flex">
             <Button
               class="mr-2 flex items-center justify-center"
@@ -208,21 +166,6 @@ onMounted(() => {
       </CardContent>
       <Table ref="table2" :columns="columns2" :api="api2">
         <template #row-col-action="{ rawItem }">
-          <TransactionDetailModal
-            :show="
-              transactionModel &&
-              modalConfirmMode === 'detail' &&
-              transactionModel.id === rawItem.id
-                ? true
-                : false
-            "
-            :transaction="transactionModel"
-            @close="
-              () => {
-                transactionModel = undefined
-              }
-            "
-          />
           <div class="flex-1 flex">
             <Button
               class="mr-2 flex items-center justify-center"
@@ -282,7 +225,7 @@ onMounted(() => {
             class="capitalize"
             size="sm"
             type="opposite"
-            text="Back"
+            text="Cancel"
             @click="modalConfirmToggle(modalConfirmMode)"
           />
           <template v-if="['decline', 'cancel'].includes(modalConfirmMode)">

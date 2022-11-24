@@ -8,7 +8,7 @@
       </NuxtLayout>
       <div
         v-if="loading.state"
-        class="fixed z-50 top-0 left-0 w-screen h-screen flex bg-black/70"
+        class="fixed z-60 top-0 left-0 w-screen h-screen flex bg-black/70"
       >
         <div class="flex-1 flex justify-center items-center relative">
           <div

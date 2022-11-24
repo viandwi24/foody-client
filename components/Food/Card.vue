@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Card } from '#components'
-import { Menu } from '~/types'
+import { Menu } from '~~/type'
 
 defineProps({
   menu: {

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Menu } from '~/types'
+import { Menu } from '~~/type'
 
 export interface CartStateMenu {
   menu: Menu

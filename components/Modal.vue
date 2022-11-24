@@ -16,6 +16,11 @@ defineProps({
     type: String,
     required: true,
   },
+  size: {
+    type: String,
+    default: 'md',
+    validator: (val: string) => ['sm', 'md', 'lg'].includes(val),
+  },
 })
 const emit = defineEmits(['close'])
 </script>
@@ -47,7 +52,11 @@ const emit = defineEmits(['close'])
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="w-full max-w-md transform overflow-hidden rounded-lg px-8 py-8 text-left align-middle shadow-xl transition-all bg-white dark:bg-slate-800"
+              class="w-full transform overflow-hidden rounded-lg px-8 py-8 text-left align-middle shadow-xl transition-all bg-white dark:bg-slate-800"
+              :class="{
+                'max-w-md': size == 'md',
+                'max-w-xl': size == 'xl',
+              }"
             >
               <DialogTitle
                 as="h3"

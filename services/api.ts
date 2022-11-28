@@ -130,4 +130,44 @@ export namespace Api {
       },
     })
   }
+
+  // auth
+  export namespace Auth {
+    /**
+     * Login
+     * @param data
+     * @returns
+     */
+    export const Login = (data: { email: string; password: string }) => ({
+      config: {
+        method: 'POST',
+        url: 'auth/login',
+        data,
+      },
+    })
+
+    /**
+     * Logout
+     * @returns
+     */
+    export const Logout = () => ({
+      config: {
+        method: 'POST',
+        url: 'auth/logout',
+      },
+    })
+
+    /**
+     * Me
+     * Get current user
+     * @returns
+     * @returns
+     */
+    export const Me = () => ({
+      config: {
+        method: 'GET',
+        url: 'auth/user',
+      },
+    })
+  }
 }

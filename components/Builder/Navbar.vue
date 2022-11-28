@@ -100,6 +100,10 @@ const toggleOptions = (show?: boolean) => {
             </NuxtLink>
           </slot>
           <!-- menu -->
+          {{ $auth.isLoggedIn }}
+          <div v-if="$auth.isLoggedIn" class="flex-1 flex items-center">
+            {{ $auth.user?.name || '' }}
+          </div>
           <slot name="menu" />
           <!-- options:toggle -->
           <div

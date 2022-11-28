@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import QrcodeVue from 'qrcode.vue'
 import { useCart } from '~/stores/cart'
 import { useLoading } from '~/stores/loading'
 import { IApp } from '~/utils/app'
@@ -223,12 +224,13 @@ onBeforeUnmount(() => {
               </div>
             </div>
           </div>
-          <div class="pr-2 flex">
-            <img
+          <div class="pr-2 flex mr-4 items-center">
+            <!-- <img
               src="https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.example.com&chs=180x180&choe=UTF-8&chld=L|2"
               alt="Qrcode"
               class="inline-block"
-            />
+            /> -->
+            <QrcodeVue :value="`#${transaction.code}`" :size="142" level="H" />
           </div>
           <div
             class="absolute right-0 transform mr-7 font-bold font-mono text-gray-600"

@@ -44,7 +44,7 @@ const hasFoodInCart = ref(false)
       </div>
       <div class="text-sm p-2 flex justify-between items-center bg-slate-800">
         <div class="font-bold flex items-center">
-          {{ $getCurrentCurrency().symbol + menu.price }}
+          {{ $formatCurrency(menu.price) }}
         </div>
         <div class="rounded bg-primary-500 p-0.5">
           <div v-if="hasFoodInCart" class="w-4 h-4">+1</div>

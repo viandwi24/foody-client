@@ -14,9 +14,7 @@ export default defineNuxtConfig({
   // server side rendering mode
   // ssr: true,
 
-  components: {
-    global: true,
-  },
+  components: true,
 
   // app
   app: {
@@ -45,7 +43,12 @@ export default defineNuxtConfig({
   ],
 
   // plugins
-  plugins: ['~/plugins/navbar.ts', '~/plugins/utils.ts', '~/plugins/toast.ts'],
+  plugins: [
+    '~/plugins/navbar.ts',
+    '~/plugins/utils.ts',
+    '~/plugins/toast.ts',
+    '~/plugins/components.client.ts',
+  ],
 
   // build
   build: {
@@ -69,7 +72,7 @@ export default defineNuxtConfig({
   },
 
   // auto import components
-  components: true,
+  // components: true,
 
   // vite plugins
   vite: {

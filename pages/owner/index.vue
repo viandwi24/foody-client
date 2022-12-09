@@ -15,6 +15,7 @@ const screen = useScreen()
 // compiler macro
 definePageMeta({
   layout: 'dashboard',
+  middleware: ['auth'],
 })
 useHead(() => ({
   titleTemplate: '',

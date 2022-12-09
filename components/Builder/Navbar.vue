@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { IApp } from '~/utils/app'
 
 // state
@@ -46,6 +47,17 @@ const toggleOptions = (show?: boolean) => {
     showOptions.value = !showOptions.value
   }
 }
+
+const { $auth } = useNuxtApp()
+const router = useRouter()
+
+const logout = () => $auth.logout()
+const home = () => router.push(getHomeRoute.value)
+
+const getHomeRoute = computed(() => {
+  if ($auth.isLoggedIn) return { name: 'owner' }
+  return { name: 'index' }
+})
 </script>
 
 <template>
@@ -83,7 +95,7 @@ const toggleOptions = (show?: boolean) => {
             <NuxtLink
               tag="a"
               class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-gray-900 dark:text-gray-200"
-              :to="{ name: 'index' }"
+              :to="getHomeRoute"
             >
               <span class="sr-only">home</span>
               <span class="flex items-center">
@@ -100,9 +112,32 @@ const toggleOptions = (show?: boolean) => {
             </NuxtLink>
           </slot>
           <!-- menu -->
-          {{ $auth.isLoggedIn }}
-          <div v-if="$auth.isLoggedIn" class="flex-1 flex items-center">
-            {{ $auth.user?.name || '' }}
+          <div
+            v-if="$auth.isLoggedIn"
+            class="flex-1 flex items-center justify-end"
+          >
+            <Menu>
+              <MenuButton>{{ $auth.user?.name || '' }}</MenuButton>
+              <MenuItems
+                class="absolute z-50 flex flex-col space-y-3 top-0 mt-8 bg-gray-100 dark:bg-slate-800 pl-4 pr-8 py-4 rounded-lg items-start justify-start text-sm"
+              >
+                <MenuItem>
+                  <button class="flex space-x-2 items-center" @click="home()">
+                    <IconFa:home class="text-xs" />
+                    <span>Home</span>
+                  </button>
+                </MenuItem>
+                <MenuItem>
+                  <button class="flex space-x-2 items-center" @click="logout()">
+                    <IconFa:sign-out class="text-xs" />
+                    <span>Logout</span>
+                  </button>
+                </MenuItem>
+              </MenuItems>
+            </Menu>
+            <!-- <div class="text-sm">
+              {{ $auth.user?.name || '' }}
+            </div> -->
           </div>
           <slot name="menu" />
           <!-- options:toggle -->

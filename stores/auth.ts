@@ -67,5 +67,14 @@ export const useAuth = defineStore('auth', {
         api.http.defaults.headers.common.Authorization
       )
     },
+    logout() {
+      const router = useRouter()
+      console.log('logging out')
+      this.clearToken()
+      this.user = undefined
+      this.isLoggedIn = false
+      router.push('/owner/auth/login')
+      console.log('logged out')
+    },
   },
 })

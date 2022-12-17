@@ -1365,8 +1365,8 @@ const Component = defineComponent({
   }
 });
 const layouts = {
-  dashboard: defineAsyncComponent(() => import("./_nuxt/dashboard.3f4f4c4b.js").then((m2) => m2.default || m2)),
-  page: defineAsyncComponent(() => import("./_nuxt/page.dc5fc013.js").then((m2) => m2.default || m2))
+  dashboard: defineAsyncComponent(() => import("./_nuxt/dashboard.94a58670.js").then((m2) => m2.default || m2)),
+  page: defineAsyncComponent(() => import("./_nuxt/page.7f21477d.js").then((m2) => m2.default || m2))
 };
 const __nuxt_component_0$1 = defineComponent({
   props: {
@@ -10825,7 +10825,7 @@ const Navbar$2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProp
   default: Navbar$1
 }, Symbol.toStringTag, { value: "Module" }));
 const ax = axios.create({
-  baseURL: "http://localhost/api/"
+  baseURL: "https://foody.viandwi24.site/api/"
 });
 const useHttp = () => {
   return ax;
@@ -15148,7 +15148,7 @@ const _routes = [
     meta: meta$b,
     alias: (meta$b == null ? void 0 : meta$b.alias) || [],
     redirect: (meta$b == null ? void 0 : meta$b.redirect) || void 0,
-    component: () => import("./_nuxt/document-driven.bc9bc7ae.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/document-driven.59d103de.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-404",
@@ -15158,7 +15158,7 @@ const _routes = [
     meta: meta$a,
     alias: (meta$a == null ? void 0 : meta$a.alias) || [],
     redirect: (meta$a == null ? void 0 : meta$a.redirect) || void 0,
-    component: () => import("./_nuxt/404.5f638f21.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/404.afb81be7.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-blank",
@@ -15168,7 +15168,7 @@ const _routes = [
     meta: meta$9,
     alias: (meta$9 == null ? void 0 : meta$9.alias) || [],
     redirect: (meta$9 == null ? void 0 : meta$9.redirect) || void 0,
-    component: () => import("./_nuxt/blank.38804fee.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/blank.db812d7a.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-dashboard",
@@ -15178,7 +15178,7 @@ const _routes = [
     meta: meta$8,
     alias: (meta$8 == null ? void 0 : meta$8.alias) || [],
     redirect: (meta$8 == null ? void 0 : meta$8.redirect) || void 0,
-    component: () => import("./_nuxt/index.b862038f.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/index.a07cca46.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-getting-started",
@@ -15188,7 +15188,7 @@ const _routes = [
     meta: meta$7,
     alias: (meta$7 == null ? void 0 : meta$7.alias) || [],
     redirect: (meta$7 == null ? void 0 : meta$7.redirect) || void 0,
-    component: () => import("./_nuxt/getting-started.3855e2e3.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/getting-started.c29e0388.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-post-slut",
@@ -15198,7 +15198,7 @@ const _routes = [
     meta: meta$6,
     alias: (meta$6 == null ? void 0 : meta$6.alias) || [],
     redirect: (meta$6 == null ? void 0 : meta$6.redirect) || void 0,
-    component: () => import("./_nuxt/_slut_.6a93ad0a.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/_slut_.b2b0efa6.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-post",
@@ -15208,7 +15208,7 @@ const _routes = [
     meta: meta$5,
     alias: (meta$5 == null ? void 0 : meta$5.alias) || [],
     redirect: (meta$5 == null ? void 0 : meta$5.redirect) || void 0,
-    component: () => import("./_nuxt/index.b82b68ca.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/index.acee1288.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-setting",
@@ -15218,7 +15218,7 @@ const _routes = [
     meta: meta$4,
     alias: (meta$4 == null ? void 0 : meta$4.alias) || [],
     redirect: (meta$4 == null ? void 0 : meta$4.redirect) || void 0,
-    component: () => import("./_nuxt/setting.3ca3dd66.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/setting.77d5807e.js").then((m2) => m2.default || m2)
   },
   {
     name: "bak-test",
@@ -15228,7 +15228,7 @@ const _routes = [
     meta: meta$3,
     alias: (meta$3 == null ? void 0 : meta$3.alias) || [],
     redirect: (meta$3 == null ? void 0 : meta$3.redirect) || void 0,
-    component: () => import("./_nuxt/test.1c44b8be.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/test.2c4b2626.js").then((m2) => m2.default || m2)
   },
   {
     name: "index",
@@ -15238,7 +15238,7 @@ const _routes = [
     meta: meta$2,
     alias: (meta$2 == null ? void 0 : meta$2.alias) || [],
     redirect: (meta$2 == null ? void 0 : meta$2.redirect) || void 0,
-    component: () => import("./_nuxt/index.f6e58d5f.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/index.e324c738.js").then((m2) => m2.default || m2)
   },
   {
     name: "owner-auth-login",
@@ -15248,7 +15248,7 @@ const _routes = [
     meta: meta$1,
     alias: (meta$1 == null ? void 0 : meta$1.alias) || [],
     redirect: (meta$1 == null ? void 0 : meta$1.redirect) || void 0,
-    component: () => import("./_nuxt/login.b2939a9a.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/login.346b12b2.js").then((m2) => m2.default || m2)
   },
   {
     name: "owner",
@@ -15258,7 +15258,7 @@ const _routes = [
     meta,
     alias: (meta == null ? void 0 : meta.alias) || [],
     redirect: (meta == null ? void 0 : meta.redirect) || void 0,
-    component: () => import("./_nuxt/index.086abc71.js").then((m2) => m2.default || m2)
+    component: () => import("./_nuxt/index.8613dd0d.js").then((m2) => m2.default || m2)
   }
 ];
 const configRouterOptions = {};
@@ -16835,7 +16835,7 @@ const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import("./_nuxt/error-component.106611fa.js").then((r2) => r2.default || r2));
+    const ErrorComponent = defineAsyncComponent(() => import("./_nuxt/error-component.695752aa.js").then((r2) => r2.default || r2));
     const nuxtApp = useNuxtApp();
     provide("_route", useRoute());
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");

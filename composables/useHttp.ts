@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const ax = axios.create({
-  baseURL: 'http://localhost/api/',
+  baseURL: 'http://103.13.207.24/api',
 })
 
 export const useHttp = () => {

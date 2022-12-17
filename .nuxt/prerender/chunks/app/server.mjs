@@ -1,4 +1,4 @@
-import { toRef, isRef, computed, defineAsyncComponent, defineComponent, inject, provide, h as h$2, Suspense, Transition, reactive, Text, resolveComponent, useSSRContext, watch, useSlots, unref, mergeProps, withCtx, renderSlot, createTextVNode, toDisplayString as toDisplayString$1, createVNode, resolveDynamicComponent, getCurrentInstance, onUnmounted, shallowRef, ref, withAsyncContext, toRefs, cloneVNode, Fragment as Fragment$1, onMounted, watchEffect, Teleport, nextTick, toRaw, openBlock, createBlock, createCommentVNode, createElementBlock, renderList, withModifiers, onErrorCaptured, onServerPrefetch, markRaw, createApp, effectScope, isReactive, createElementVNode } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/vue@3.2.39/node_modules/vue/index.mjs';
+import { toRef, isRef, computed, defineAsyncComponent, defineComponent, inject, provide, h as h$2, Suspense, Transition, reactive, Text, resolveComponent, useSSRContext, watch, useSlots, unref, mergeProps, withCtx, renderSlot, createTextVNode, toDisplayString as toDisplayString$1, createVNode, resolveDynamicComponent, getCurrentInstance, onUnmounted, shallowRef, ref, withAsyncContext, toRefs, cloneVNode, Fragment as Fragment$1, onMounted, watchEffect, Teleport, nextTick, toRaw, openBlock, createBlock, createCommentVNode, createElementBlock, renderList, withModifiers, onErrorCaptured, onServerPrefetch, markRaw, normalizeStyle, normalizeClass, createElementVNode, toHandlers, TransitionGroup, createApp, effectScope, isReactive } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/vue@3.2.39/node_modules/vue/index.mjs';
 import { $fetch as $fetch$1 } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/ohmyfetch@0.4.19/node_modules/ohmyfetch/dist/node.mjs';
 import { withoutTrailingSlash, joinURL, hasProtocol, isEqual, withLeadingSlash, parseURL, withBase } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/ufo@0.8.5/node_modules/ufo/dist/index.mjs';
 import { createHooks } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/hookable@5.3.0/node_modules/hookable/dist/index.mjs';
@@ -7,7 +7,7 @@ import { RouterView, createMemoryHistory, createRouter } from 'file:///home/vian
 import destr from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/destr@1.1.1/node_modules/destr/dist/index.mjs';
 import { createError as createError$1, sendRedirect, appendHeader } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/h3@0.7.21/node_modules/h3/dist/index.mjs';
 import defu, { defuFn } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/defu@6.1.1/node_modules/defu/dist/defu.mjs';
-import { isFunction as isFunction$1 } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/@vue+shared@3.2.39/node_modules/@vue/shared/index.js';
+import { isFunction as isFunction$2 } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/@vue+shared@3.2.39/node_modules/@vue/shared/index.js';
 import { pascalCase } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/scule@0.3.2/node_modules/scule/dist/index.mjs';
 import { find, html } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/property-information@6.1.1/node_modules/property-information/index.js';
 import htmlTags from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/html-tags@3.2.0/node_modules/html-tags/index.js';
@@ -17,7 +17,6 @@ import { parse as parse$1, serialize } from 'file:///home/viandwi24/Project/Lear
 import { CompileErrorCodes, createCompileError } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/@intlify+message-compiler@9.3.0-beta.10/node_modules/@intlify/message-compiler/dist/message-compiler.mjs';
 import { VueDevToolsLabels, VueDevToolsPlaceholders, VueDevToolsTimelineColors } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/@intlify+vue-devtools@9.2.2/node_modules/@intlify/vue-devtools/index.mjs';
 import axios from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/axios@1.2.0/node_modules/axios/index.js';
-import Toast, { useToast, POSITION } from 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/vue-toastification@2.0.0-rc.5_vue@3.2.39/node_modules/vue-toastification/dist/index.cjs';
 import { a as useRuntimeConfig$1 } from '../nitro/nitro-prerenderer.mjs';
 import 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/node-fetch-native@0.1.7/node_modules/node-fetch-native/dist/polyfill.mjs';
 import 'file:///home/viandwi24/Project/Learn/foody-client/node_modules/.pnpm/radix3@0.1.2/node_modules/radix3/dist/index.mjs';
@@ -549,7 +548,7 @@ const nuxtLink = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProp
 const inlineConfig = {};
 defuFn(inlineConfig);
 function useHead(meta2) {
-  const resolvedMeta = isFunction$1(meta2) ? computed(meta2) : meta2;
+  const resolvedMeta = isFunction$2(meta2) ? computed(meta2) : meta2;
   useNuxtApp()._useHead(resolvedMeta);
 }
 function useMeta(meta2) {
@@ -1396,8 +1395,8 @@ const Component = defineComponent({
   }
 });
 const layouts = {
-  dashboard: defineAsyncComponent(() => import('./_nuxt/dashboard.424a27d7.mjs').then((m2) => m2.default || m2)),
-  page: defineAsyncComponent(() => import('./_nuxt/page.a507b876.mjs').then((m2) => m2.default || m2))
+  dashboard: defineAsyncComponent(() => import('./_nuxt/dashboard.3f4f4c4b.mjs').then((m2) => m2.default || m2)),
+  page: defineAsyncComponent(() => import('./_nuxt/page.dc5fc013.mjs').then((m2) => m2.default || m2))
 };
 const __nuxt_component_0$1 = defineComponent({
   props: {
@@ -2121,7 +2120,7 @@ const Error$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
 const inBrowser = false;
 const RE_ARGS = /\{([0-9a-zA-Z]+)\}/g;
 function format(message, ...args) {
-  if (args.length === 1 && isObject(args[0])) {
+  if (args.length === 1 && isObject$1(args[0])) {
     args = args[0];
   }
   if (!args || !args.hasOwnProperty) {
@@ -2135,7 +2134,7 @@ const hasSymbol = typeof Symbol === "function" && typeof Symbol.toStringTag === 
 const makeSymbol = (name) => hasSymbol ? Symbol(name) : name;
 const generateFormatCacheKey = (locale, key, source) => friendlyJSONstringify({ l: locale, k: key, s: source });
 const friendlyJSONstringify = (json) => JSON.stringify(json).replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029").replace(/\u0027/g, "\\u0027");
-const isNumber = (val) => typeof val === "number" && isFinite(val);
+const isNumber$1 = (val) => typeof val === "number" && isFinite(val);
 const isDate = (val) => toTypeString(val) === "[object Date]";
 const isRegExp = (val) => toTypeString(val) === "[object RegExp]";
 const isEmptyObject = (val) => isPlainObject$1(val) && Object.keys(val).length === 0;
@@ -2160,10 +2159,10 @@ function hasOwn(obj, key) {
   return hasOwnProperty.call(obj, key);
 }
 const isArray = Array.isArray;
-const isFunction = (val) => typeof val === "function";
-const isString = (val) => typeof val === "string";
+const isFunction$1 = (val) => typeof val === "function";
+const isString$1 = (val) => typeof val === "string";
 const isBoolean = (val) => typeof val === "boolean";
-const isObject = (val) => val !== null && typeof val === "object";
+const isObject$1 = (val) => val !== null && typeof val === "object";
 const objectToString = Object.prototype.toString;
 const toTypeString = (value) => objectToString.call(value);
 const isPlainObject$1 = (val) => toTypeString(val) === "[object Object]";
@@ -2415,10 +2414,10 @@ function parse(path) {
 }
 const cache$1 = /* @__PURE__ */ new Map();
 function resolveWithKeyValue(obj, path) {
-  return isObject(obj) ? obj[path] : null;
+  return isObject$1(obj) ? obj[path] : null;
 }
 function resolveValue(obj, path) {
-  if (!isObject(obj)) {
+  if (!isObject$1(obj)) {
     return null;
   }
   let hit = cache$1.get(path);
@@ -2457,8 +2456,8 @@ function pluralDefault(choice, choicesLength) {
   return choice ? Math.min(choice, 2) : 0;
 }
 function getPluralIndex(options) {
-  const index2 = isNumber(options.pluralIndex) ? options.pluralIndex : -1;
-  return options.named && (isNumber(options.named.count) || isNumber(options.named.n)) ? isNumber(options.named.count) ? options.named.count : isNumber(options.named.n) ? options.named.n : index2 : index2;
+  const index2 = isNumber$1(options.pluralIndex) ? options.pluralIndex : -1;
+  return options.named && (isNumber$1(options.named.count) || isNumber$1(options.named.n)) ? isNumber$1(options.named.count) ? options.named.count : isNumber$1(options.named.n) ? options.named.n : index2 : index2;
 }
 function normalizeNamed(pluralIndex, props) {
   if (!props.count) {
@@ -2471,40 +2470,40 @@ function normalizeNamed(pluralIndex, props) {
 function createMessageContext(options = {}) {
   const locale = options.locale;
   const pluralIndex = getPluralIndex(options);
-  const pluralRule = isObject(options.pluralRules) && isString(locale) && isFunction(options.pluralRules[locale]) ? options.pluralRules[locale] : pluralDefault;
-  const orgPluralRule = isObject(options.pluralRules) && isString(locale) && isFunction(options.pluralRules[locale]) ? pluralDefault : void 0;
+  const pluralRule = isObject$1(options.pluralRules) && isString$1(locale) && isFunction$1(options.pluralRules[locale]) ? options.pluralRules[locale] : pluralDefault;
+  const orgPluralRule = isObject$1(options.pluralRules) && isString$1(locale) && isFunction$1(options.pluralRules[locale]) ? pluralDefault : void 0;
   const plural = (messages2) => {
     return messages2[pluralRule(pluralIndex, messages2.length, orgPluralRule)];
   };
   const _list = options.list || [];
   const list = (index2) => _list[index2];
   const _named = options.named || {};
-  isNumber(options.pluralIndex) && normalizeNamed(pluralIndex, _named);
+  isNumber$1(options.pluralIndex) && normalizeNamed(pluralIndex, _named);
   const named = (key) => _named[key];
   function message(key) {
-    const msg = isFunction(options.messages) ? options.messages(key) : isObject(options.messages) ? options.messages[key] : false;
+    const msg = isFunction$1(options.messages) ? options.messages(key) : isObject$1(options.messages) ? options.messages[key] : false;
     return !msg ? options.parent ? options.parent.message(key) : DEFAULT_MESSAGE : msg;
   }
   const _modifier = (name) => options.modifiers ? options.modifiers[name] : DEFAULT_MODIFIER;
-  const normalize = isPlainObject$1(options.processor) && isFunction(options.processor.normalize) ? options.processor.normalize : DEFAULT_NORMALIZE;
-  const interpolate = isPlainObject$1(options.processor) && isFunction(options.processor.interpolate) ? options.processor.interpolate : DEFAULT_INTERPOLATE;
-  const type = isPlainObject$1(options.processor) && isString(options.processor.type) ? options.processor.type : DEFAULT_MESSAGE_DATA_TYPE;
+  const normalize = isPlainObject$1(options.processor) && isFunction$1(options.processor.normalize) ? options.processor.normalize : DEFAULT_NORMALIZE;
+  const interpolate = isPlainObject$1(options.processor) && isFunction$1(options.processor.interpolate) ? options.processor.interpolate : DEFAULT_INTERPOLATE;
+  const type = isPlainObject$1(options.processor) && isString$1(options.processor.type) ? options.processor.type : DEFAULT_MESSAGE_DATA_TYPE;
   const linked = (key, ...args) => {
     const [arg1, arg2] = args;
     let type2 = "text";
     let modifier = "";
     if (args.length === 1) {
-      if (isObject(arg1)) {
+      if (isObject$1(arg1)) {
         modifier = arg1.modifier || modifier;
         type2 = arg1.type || type2;
-      } else if (isString(arg1)) {
+      } else if (isString$1(arg1)) {
         modifier = arg1 || modifier;
       }
     } else if (args.length === 2) {
-      if (isString(arg1)) {
+      if (isString$1(arg1)) {
         modifier = arg1 || modifier;
       }
-      if (isString(arg2)) {
+      if (isString$1(arg2)) {
         type2 = arg2 || type2;
       }
     }
@@ -2565,11 +2564,11 @@ function getWarnMessage$1(code2, ...args) {
 function fallbackWithSimple(ctx, fallback, start) {
   return [.../* @__PURE__ */ new Set([
     start,
-    ...isArray(fallback) ? fallback : isObject(fallback) ? Object.keys(fallback) : isString(fallback) ? [fallback] : [start]
+    ...isArray(fallback) ? fallback : isObject$1(fallback) ? Object.keys(fallback) : isString$1(fallback) ? [fallback] : [start]
   ])];
 }
 function fallbackWithLocaleChain(ctx, fallback, start) {
-  const startLocale = isString(start) ? start : DEFAULT_LOCALE;
+  const startLocale = isString$1(start) ? start : DEFAULT_LOCALE;
   const context = ctx;
   if (!context.__localeChainCache) {
     context.__localeChainCache = /* @__PURE__ */ new Map();
@@ -2582,7 +2581,7 @@ function fallbackWithLocaleChain(ctx, fallback, start) {
       block = appendBlockToChain(chain, block, fallback);
     }
     const defaults = isArray(fallback) || !isPlainObject$1(fallback) ? fallback : fallback["default"] ? fallback["default"] : null;
-    block = isString(defaults) ? [defaults] : defaults;
+    block = isString$1(defaults) ? [defaults] : defaults;
     if (isArray(block)) {
       appendBlockToChain(chain, block, false);
     }
@@ -2594,7 +2593,7 @@ function appendBlockToChain(chain, block, blocks) {
   let follow = true;
   for (let i2 = 0; i2 < block.length && isBoolean(follow); i2++) {
     const locale = block[i2];
-    if (isString(locale)) {
+    if (isString$1(locale)) {
       follow = appendLocaleToChain(chain, block[i2], blocks);
     }
   }
@@ -2633,13 +2632,13 @@ const capitalize = (str) => `${str.charAt(0).toLocaleUpperCase()}${str.substr(1)
 function getDefaultLinkedModifiers() {
   return {
     upper: (val, type) => {
-      return type === "text" && isString(val) ? val.toUpperCase() : type === "vnode" && isObject(val) && "__v_isVNode" in val ? val.children.toUpperCase() : val;
+      return type === "text" && isString$1(val) ? val.toUpperCase() : type === "vnode" && isObject$1(val) && "__v_isVNode" in val ? val.children.toUpperCase() : val;
     },
     lower: (val, type) => {
-      return type === "text" && isString(val) ? val.toLowerCase() : type === "vnode" && isObject(val) && "__v_isVNode" in val ? val.children.toLowerCase() : val;
+      return type === "text" && isString$1(val) ? val.toLowerCase() : type === "vnode" && isObject$1(val) && "__v_isVNode" in val ? val.children.toLowerCase() : val;
     },
     capitalize: (val, type) => {
-      return type === "text" && isString(val) ? capitalize(val) : type === "vnode" && isObject(val) && "__v_isVNode" in val ? capitalize(val.children) : val;
+      return type === "text" && isString$1(val) ? capitalize(val) : type === "vnode" && isObject$1(val) && "__v_isVNode" in val ? capitalize(val.children) : val;
     }
   };
 }
@@ -2664,32 +2663,32 @@ const setFallbackContext = (context) => {
 const getFallbackContext = () => _fallbackContext;
 let _cid = 0;
 function createCoreContext(options = {}) {
-  const version = isString(options.version) ? options.version : VERSION$1;
-  const locale = isString(options.locale) ? options.locale : DEFAULT_LOCALE;
-  const fallbackLocale = isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || isString(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
+  const version = isString$1(options.version) ? options.version : VERSION$1;
+  const locale = isString$1(options.locale) ? options.locale : DEFAULT_LOCALE;
+  const fallbackLocale = isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || isString$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
   const messages2 = isPlainObject$1(options.messages) ? options.messages : { [locale]: {} };
   const datetimeFormats = isPlainObject$1(options.datetimeFormats) ? options.datetimeFormats : { [locale]: {} };
   const numberFormats = isPlainObject$1(options.numberFormats) ? options.numberFormats : { [locale]: {} };
   const modifiers = assign$1({}, options.modifiers || {}, getDefaultLinkedModifiers());
   const pluralRules = options.pluralRules || {};
-  const missing = isFunction(options.missing) ? options.missing : null;
+  const missing = isFunction$1(options.missing) ? options.missing : null;
   const missingWarn = isBoolean(options.missingWarn) || isRegExp(options.missingWarn) ? options.missingWarn : true;
   const fallbackWarn = isBoolean(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
   const fallbackFormat = !!options.fallbackFormat;
   const unresolving = !!options.unresolving;
-  const postTranslation = isFunction(options.postTranslation) ? options.postTranslation : null;
+  const postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : null;
   const processor = isPlainObject$1(options.processor) ? options.processor : null;
   const warnHtmlMessage = isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
   const escapeParameter = !!options.escapeParameter;
-  const messageCompiler = isFunction(options.messageCompiler) ? options.messageCompiler : _compiler;
-  const messageResolver = isFunction(options.messageResolver) ? options.messageResolver : _resolver || resolveWithKeyValue;
-  const localeFallbacker = isFunction(options.localeFallbacker) ? options.localeFallbacker : _fallbacker || fallbackWithSimple;
-  const fallbackContext = isObject(options.fallbackContext) ? options.fallbackContext : void 0;
-  const onWarn = isFunction(options.onWarn) ? options.onWarn : warn;
+  const messageCompiler = isFunction$1(options.messageCompiler) ? options.messageCompiler : _compiler;
+  const messageResolver = isFunction$1(options.messageResolver) ? options.messageResolver : _resolver || resolveWithKeyValue;
+  const localeFallbacker = isFunction$1(options.localeFallbacker) ? options.localeFallbacker : _fallbacker || fallbackWithSimple;
+  const fallbackContext = isObject$1(options.fallbackContext) ? options.fallbackContext : void 0;
+  const onWarn = isFunction$1(options.onWarn) ? options.onWarn : warn;
   const internalOptions = options;
-  const __datetimeFormatters = isObject(internalOptions.__datetimeFormatters) ? internalOptions.__datetimeFormatters : /* @__PURE__ */ new Map();
-  const __numberFormatters = isObject(internalOptions.__numberFormatters) ? internalOptions.__numberFormatters : /* @__PURE__ */ new Map();
-  const __meta = isObject(internalOptions.__meta) ? internalOptions.__meta : {};
+  const __datetimeFormatters = isObject$1(internalOptions.__datetimeFormatters) ? internalOptions.__datetimeFormatters : /* @__PURE__ */ new Map();
+  const __numberFormatters = isObject$1(internalOptions.__numberFormatters) ? internalOptions.__numberFormatters : /* @__PURE__ */ new Map();
+  const __meta = isObject$1(internalOptions.__meta) ? internalOptions.__meta : {};
   _cid++;
   const context = {
     version,
@@ -2750,7 +2749,7 @@ function handleMissing(context, key, locale, missingWarn, type) {
   }
   if (missing !== null) {
     const ret = missing(context, locale, key, type);
-    return isString(ret) ? ret : key;
+    return isString$1(ret) ? ret : key;
   } else {
     if (isTranslateMissingWarn(missingWarn, key)) {
       onWarn(getWarnMessage$1(CoreWarnCodes.NOT_FOUND_KEY, { key, locale }));
@@ -2780,7 +2779,7 @@ const errorMessages$1 = {
   [CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT]: "The argument provided is not a valid ISO date string"
 };
 const NOOP_MESSAGE_FUNCTION = () => "";
-const isMessageFunction = (val) => isFunction(val);
+const isMessageFunction = (val) => isFunction$1(val);
 function translate(context, ...args) {
   const { fallbackFormat, postTranslation, unresolving, messageCompiler, fallbackLocale, messages: messages2 } = context;
   const [key, options] = parseTranslateArgs(...args);
@@ -2788,9 +2787,9 @@ function translate(context, ...args) {
   const fallbackWarn = isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
   const escapeParameter = isBoolean(options.escapeParameter) ? options.escapeParameter : context.escapeParameter;
   const resolvedMessage = !!options.resolvedMessage;
-  const defaultMsgOrKey = isString(options.default) || isBoolean(options.default) ? !isBoolean(options.default) ? options.default : !messageCompiler ? () => key : key : fallbackFormat ? !messageCompiler ? () => key : key : "";
+  const defaultMsgOrKey = isString$1(options.default) || isBoolean(options.default) ? !isBoolean(options.default) ? options.default : !messageCompiler ? () => key : key : fallbackFormat ? !messageCompiler ? () => key : key : "";
   const enableDefaultMsg = fallbackFormat || defaultMsgOrKey !== "";
-  const locale = isString(options.locale) ? options.locale : context.locale;
+  const locale = isString$1(options.locale) ? options.locale : context.locale;
   escapeParameter && escapeParams(options);
   let [formatScope, targetLocale, message] = !resolvedMessage ? resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn, missingWarn) : [
     key,
@@ -2799,16 +2798,16 @@ function translate(context, ...args) {
   ];
   let format2 = formatScope;
   let cacheBaseKey = key;
-  if (!resolvedMessage && !(isString(format2) || isMessageFunction(format2))) {
+  if (!resolvedMessage && !(isString$1(format2) || isMessageFunction(format2))) {
     if (enableDefaultMsg) {
       format2 = defaultMsgOrKey;
       cacheBaseKey = format2;
     }
   }
-  if (!resolvedMessage && (!(isString(format2) || isMessageFunction(format2)) || !isString(targetLocale))) {
+  if (!resolvedMessage && (!(isString$1(format2) || isMessageFunction(format2)) || !isString$1(targetLocale))) {
     return unresolving ? NOT_REOSLVED : key;
   }
-  if (isString(format2) && context.messageCompiler == null) {
+  if (isString$1(format2) && context.messageCompiler == null) {
     warn(`The message format compilation is not supported in this build. Because message compiler isn't included. You need to pre-compilation all message format. So translate function return '${key}'.`);
     return key;
   }
@@ -2827,9 +2826,9 @@ function translate(context, ...args) {
   {
     const payloads = {
       timestamp: Date.now(),
-      key: isString(key) ? key : isMessageFunction(format2) ? format2.key : "",
+      key: isString$1(key) ? key : isMessageFunction(format2) ? format2.key : "",
       locale: targetLocale || (isMessageFunction(format2) ? format2.locale : ""),
-      format: isString(format2) ? format2 : isMessageFunction(format2) ? format2.source : "",
+      format: isString$1(format2) ? format2 : isMessageFunction(format2) ? format2.source : "",
       message: ret
     };
     payloads.meta = assign$1({}, context.__meta, getAdditionalMeta() || {});
@@ -2839,10 +2838,10 @@ function translate(context, ...args) {
 }
 function escapeParams(options) {
   if (isArray(options.list)) {
-    options.list = options.list.map((item) => isString(item) ? escapeHtml(item) : item);
-  } else if (isObject(options.named)) {
+    options.list = options.list.map((item) => isString$1(item) ? escapeHtml(item) : item);
+  } else if (isObject$1(options.named)) {
     Object.keys(options.named).forEach((key) => {
-      if (isString(options.named[key])) {
+      if (isString$1(options.named[key])) {
         options.named[key] = escapeHtml(options.named[key]);
       }
     });
@@ -2881,7 +2880,7 @@ function resolveMessageFormat(context, key, locale, fallbackLocale, fallbackWarn
     if ((format2 = resolveValue2(message, key)) === null) {
       format2 = message[key];
     }
-    if (isString(format2) || isFunction(format2))
+    if (isString$1(format2) || isFunction$1(format2))
       break;
     const missingRet = handleMissing(
       context,
@@ -2924,22 +2923,22 @@ function evaluateMessage(context, msg, msgCtx) {
 function parseTranslateArgs(...args) {
   const [arg1, arg2, arg3] = args;
   const options = {};
-  if (!isString(arg1) && !isNumber(arg1) && !isMessageFunction(arg1)) {
+  if (!isString$1(arg1) && !isNumber$1(arg1) && !isMessageFunction(arg1)) {
     throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
   }
-  const key = isNumber(arg1) ? String(arg1) : isMessageFunction(arg1) ? arg1 : arg1;
-  if (isNumber(arg2)) {
+  const key = isNumber$1(arg1) ? String(arg1) : isMessageFunction(arg1) ? arg1 : arg1;
+  if (isNumber$1(arg2)) {
     options.plural = arg2;
-  } else if (isString(arg2)) {
+  } else if (isString$1(arg2)) {
     options.default = arg2;
   } else if (isPlainObject$1(arg2) && !isEmptyObject(arg2)) {
     options.named = arg2;
   } else if (isArray(arg2)) {
     options.list = arg2;
   }
-  if (isNumber(arg3)) {
+  if (isNumber$1(arg3)) {
     options.plural = arg3;
-  } else if (isString(arg3)) {
+  } else if (isString$1(arg3)) {
     options.default = arg3;
   } else if (isPlainObject$1(arg3)) {
     assign$1(options, arg3);
@@ -2979,7 +2978,7 @@ function getMessageContextOptions(context, locale, message, options) {
       const [, , message2] = resolveMessageFormat(fallbackContext, key, locale, fallbackLocale, fallbackWarn, missingWarn);
       val = resolveValue2(message2, key);
     }
-    if (isString(val)) {
+    if (isString$1(val)) {
       let occurred = false;
       const errorDetector = () => {
         occurred = true;
@@ -3007,7 +3006,7 @@ function getMessageContextOptions(context, locale, message, options) {
   if (options.named) {
     ctxOptions.named = options.named;
   }
-  if (isNumber(options.plural)) {
+  if (isNumber$1(options.plural)) {
     ctxOptions.pluralIndex = options.plural;
   }
   return ctxOptions;
@@ -3028,13 +3027,13 @@ function datetime(context, ...args) {
   const missingWarn = isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
   const fallbackWarn = isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
   const part = !!options.part;
-  const locale = isString(options.locale) ? options.locale : context.locale;
+  const locale = isString$1(options.locale) ? options.locale : context.locale;
   const locales = localeFallbacker(
     context,
     fallbackLocale,
     locale
   );
-  if (!isString(key) || key === "") {
+  if (!isString$1(key) || key === "") {
     return new Intl.DateTimeFormat(locale, overrides).format(value);
   }
   let datetimeFormat = {};
@@ -3070,7 +3069,7 @@ function datetime(context, ...args) {
     handleMissing(context, key, targetLocale, missingWarn, type);
     from = to;
   }
-  if (!isPlainObject$1(format2) || !isString(targetLocale)) {
+  if (!isPlainObject$1(format2) || !isString$1(targetLocale)) {
     return unresolving ? NOT_REOSLVED : key;
   }
   let id = `${targetLocale}__${key}`;
@@ -3111,7 +3110,7 @@ function parseDateTimeArgs(...args) {
   const options = {};
   let overrides = {};
   let value;
-  if (isString(arg1)) {
+  if (isString$1(arg1)) {
     const matches = arg1.match(/(\d{4}-\d{2}-\d{2})(T|\s)?(.*)/);
     if (!matches) {
       throw createCoreError(CoreErrorCodes.INVALID_ISO_DATE_ARGUMENT);
@@ -3128,12 +3127,12 @@ function parseDateTimeArgs(...args) {
       throw createCoreError(CoreErrorCodes.INVALID_DATE_ARGUMENT);
     }
     value = arg1;
-  } else if (isNumber(arg1)) {
+  } else if (isNumber$1(arg1)) {
     value = arg1;
   } else {
     throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
   }
-  if (isString(arg2)) {
+  if (isString$1(arg2)) {
     options.key = arg2;
   } else if (isPlainObject$1(arg2)) {
     Object.keys(arg2).forEach((key) => {
@@ -3144,7 +3143,7 @@ function parseDateTimeArgs(...args) {
       }
     });
   }
-  if (isString(arg3)) {
+  if (isString$1(arg3)) {
     options.locale = arg3;
   } else if (isPlainObject$1(arg3)) {
     overrides = arg3;
@@ -3175,13 +3174,13 @@ function number(context, ...args) {
   const missingWarn = isBoolean(options.missingWarn) ? options.missingWarn : context.missingWarn;
   const fallbackWarn = isBoolean(options.fallbackWarn) ? options.fallbackWarn : context.fallbackWarn;
   const part = !!options.part;
-  const locale = isString(options.locale) ? options.locale : context.locale;
+  const locale = isString$1(options.locale) ? options.locale : context.locale;
   const locales = localeFallbacker(
     context,
     fallbackLocale,
     locale
   );
-  if (!isString(key) || key === "") {
+  if (!isString$1(key) || key === "") {
     return new Intl.NumberFormat(locale, overrides).format(value);
   }
   let numberFormat = {};
@@ -3217,7 +3216,7 @@ function number(context, ...args) {
     handleMissing(context, key, targetLocale, missingWarn, type);
     from = to;
   }
-  if (!isPlainObject$1(format2) || !isString(targetLocale)) {
+  if (!isPlainObject$1(format2) || !isString$1(targetLocale)) {
     return unresolving ? NOT_REOSLVED : key;
   }
   let id = `${targetLocale}__${key}`;
@@ -3257,11 +3256,11 @@ function parseNumberArgs(...args) {
   const [arg1, arg2, arg3, arg4] = args;
   const options = {};
   let overrides = {};
-  if (!isNumber(arg1)) {
+  if (!isNumber$1(arg1)) {
     throw createCoreError(CoreErrorCodes.INVALID_ARGUMENT);
   }
   const value = arg1;
-  if (isString(arg2)) {
+  if (isString$1(arg2)) {
     options.key = arg2;
   } else if (isPlainObject$1(arg2)) {
     Object.keys(arg2).forEach((key) => {
@@ -3272,7 +3271,7 @@ function parseNumberArgs(...args) {
       }
     });
   }
-  if (isString(arg3)) {
+  if (isString$1(arg3)) {
     options.locale = arg3;
   } else if (isPlainObject$1(arg3)) {
     overrides = arg3;
@@ -3521,7 +3520,7 @@ const DisableEmitter = /* @__PURE__ */ makeSymbol("__disableEmitter");
 const SetPluralRulesSymbol = makeSymbol("__setPluralRules");
 const InejctWithOption = /* @__PURE__ */ makeSymbol("__injectWithOption");
 function handleFlatJson(obj) {
-  if (!isObject(obj)) {
+  if (!isObject$1(obj)) {
     return obj;
   }
   for (const key in obj) {
@@ -3529,7 +3528,7 @@ function handleFlatJson(obj) {
       continue;
     }
     if (!key.includes(".")) {
-      if (isObject(obj[key])) {
+      if (isObject$1(obj[key])) {
         handleFlatJson(obj[key]);
       }
     } else {
@@ -3544,7 +3543,7 @@ function handleFlatJson(obj) {
       }
       currentObj[subKeys[lastIndex]] = obj[key];
       delete obj[key];
-      if (isObject(currentObj[subKeys[lastIndex]])) {
+      if (isObject$1(currentObj[subKeys[lastIndex]])) {
         handleFlatJson(currentObj[subKeys[lastIndex]]);
       }
     }
@@ -3565,7 +3564,7 @@ function getLocaleMessages(locale, options) {
           deepCopy(resource, ret);
         }
       } else {
-        isString(custom) && deepCopy(JSON.parse(custom), ret);
+        isString$1(custom) && deepCopy(JSON.parse(custom), ret);
       }
     });
   }
@@ -3578,7 +3577,7 @@ function getLocaleMessages(locale, options) {
   }
   return ret;
 }
-const isNotObjectOrIsArray = (val) => !isObject(val) || isArray(val);
+const isNotObjectOrIsArray = (val) => !isObject$1(val) || isArray(val);
 function deepCopy(src, des) {
   if (isNotObjectOrIsArray(src) || isNotObjectOrIsArray(des)) {
     throw createI18nError(I18nErrorCodes.INVALID_VALUE);
@@ -3597,7 +3596,7 @@ function getComponentOptions(instance) {
   return instance.type;
 }
 function adjustI18nResources(global2, options, componentOptions) {
-  let messages2 = isObject(options.messages) ? options.messages : {};
+  let messages2 = isObject$1(options.messages) ? options.messages : {};
   if ("__i18nGlobal" in componentOptions) {
     messages2 = getLocaleMessages(globalThis.locale.value, {
       messages: messages2,
@@ -3611,7 +3610,7 @@ function adjustI18nResources(global2, options, componentOptions) {
     });
   }
   {
-    if (isObject(options.datetimeFormats)) {
+    if (isObject$1(options.datetimeFormats)) {
       const locales2 = Object.keys(options.datetimeFormats);
       if (locales2.length) {
         locales2.forEach((locale) => {
@@ -3619,7 +3618,7 @@ function adjustI18nResources(global2, options, componentOptions) {
         });
       }
     }
-    if (isObject(options.numberFormats)) {
+    if (isObject$1(options.numberFormats)) {
       const locales2 = Object.keys(options.numberFormats);
       if (locales2.length) {
         locales2.forEach((locale) => {
@@ -3649,10 +3648,10 @@ function createComposer(options = {}, VueI18nLegacy) {
   const _isGlobal = __root === void 0;
   let _inheritLocale = isBoolean(options.inheritLocale) ? options.inheritLocale : true;
   const _locale = ref(
-    __root && _inheritLocale ? __root.locale.value : isString(options.locale) ? options.locale : DEFAULT_LOCALE
+    __root && _inheritLocale ? __root.locale.value : isString$1(options.locale) ? options.locale : DEFAULT_LOCALE
   );
   const _fallbackLocale = ref(
-    __root && _inheritLocale ? __root.fallbackLocale.value : isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value
+    __root && _inheritLocale ? __root.fallbackLocale.value : isString$1(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value
   );
   const _messages = ref(getLocaleMessages(_locale.value, options));
   const _datetimeFormats = ref(isPlainObject$1(options.datetimeFormats) ? options.datetimeFormats : { [_locale.value]: {} });
@@ -3661,9 +3660,9 @@ function createComposer(options = {}, VueI18nLegacy) {
   let _fallbackWarn = __root ? __root.fallbackWarn : isBoolean(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
   let _fallbackRoot = __root ? __root.fallbackRoot : isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
   let _fallbackFormat = !!options.fallbackFormat;
-  let _missing = isFunction(options.missing) ? options.missing : null;
-  let _runtimeMissing = isFunction(options.missing) ? defineCoreMissingHandler(options.missing) : null;
-  let _postTranslation = isFunction(options.postTranslation) ? options.postTranslation : null;
+  let _missing = isFunction$1(options.missing) ? options.missing : null;
+  let _runtimeMissing = isFunction$1(options.missing) ? defineCoreMissingHandler(options.missing) : null;
+  let _postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : null;
   let _warnHtmlMessage = __root ? __root.warnHtmlMessage : isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
   let _escapeParameter = !!options.escapeParameter;
   const _modifiers = __root ? __root.modifiers : isPlainObject$1(options.modifiers) ? options.modifiers : {};
@@ -3732,7 +3731,7 @@ function createComposer(options = {}, VueI18nLegacy) {
   const datetimeFormats = /* @__PURE__ */ computed(() => _datetimeFormats.value);
   const numberFormats = /* @__PURE__ */ computed(() => _numberFormats.value);
   function getPostTranslationHandler() {
-    return isFunction(_postTranslation) ? _postTranslation : null;
+    return isFunction$1(_postTranslation) ? _postTranslation : null;
   }
   function setPostTranslationHandler(handler) {
     _postTranslation = handler;
@@ -3768,9 +3767,9 @@ function createComposer(options = {}, VueI18nLegacy) {
         }
       }
     }
-    if (isNumber(ret) && ret === NOT_REOSLVED) {
+    if (isNumber$1(ret) && ret === NOT_REOSLVED) {
       const [key, arg2] = argumentParser();
-      if (__root && isString(key) && isResolvedTranslateMessage(warnType, arg2)) {
+      if (__root && isString$1(key) && isResolvedTranslateMessage(warnType, arg2)) {
         if (_fallbackRoot && (isTranslateFallbackWarn(_fallbackWarn, key) || isTranslateMissingWarn(_missingWarn, key))) {
           warn(getWarnMessage(I18nWarnCodes.FALLBACK_TO_ROOT, {
             key,
@@ -3797,23 +3796,23 @@ function createComposer(options = {}, VueI18nLegacy) {
     }
   };
   function t2(...args) {
-    return wrapWithDeps((context) => Reflect.apply(translate, null, [context, ...args]), () => parseTranslateArgs(...args), "translate", (root) => Reflect.apply(root.t, root, [...args]), (key) => key, (val) => isString(val));
+    return wrapWithDeps((context) => Reflect.apply(translate, null, [context, ...args]), () => parseTranslateArgs(...args), "translate", (root) => Reflect.apply(root.t, root, [...args]), (key) => key, (val) => isString$1(val));
   }
   function rt(...args) {
     const [arg1, arg2, arg3] = args;
-    if (arg3 && !isObject(arg3)) {
+    if (arg3 && !isObject$1(arg3)) {
       throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
     }
     return t2(...[arg1, arg2, assign$1({ resolvedMessage: true }, arg3 || {})]);
   }
   function d2(...args) {
-    return wrapWithDeps((context) => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), "datetime format", (root) => Reflect.apply(root.d, root, [...args]), () => MISSING_RESOLVE_VALUE, (val) => isString(val));
+    return wrapWithDeps((context) => Reflect.apply(datetime, null, [context, ...args]), () => parseDateTimeArgs(...args), "datetime format", (root) => Reflect.apply(root.d, root, [...args]), () => MISSING_RESOLVE_VALUE, (val) => isString$1(val));
   }
   function n2(...args) {
-    return wrapWithDeps((context) => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), "number format", (root) => Reflect.apply(root.n, root, [...args]), () => MISSING_RESOLVE_VALUE, (val) => isString(val));
+    return wrapWithDeps((context) => Reflect.apply(number, null, [context, ...args]), () => parseNumberArgs(...args), "number format", (root) => Reflect.apply(root.n, root, [...args]), () => MISSING_RESOLVE_VALUE, (val) => isString$1(val));
   }
   function normalize(values) {
-    return values.map((val) => isString(val) || isNumber(val) || isBoolean(val) ? createTextNode(String(val)) : val);
+    return values.map((val) => isString$1(val) || isNumber$1(val) || isBoolean(val) ? createTextNode(String(val)) : val);
   }
   const interpolate = (val) => val;
   const processor = {
@@ -3848,7 +3847,7 @@ function createComposer(options = {}, VueI18nLegacy) {
       "number format",
       (root) => root[NumberPartsSymbol](...args),
       () => [],
-      (val) => isString(val) || isArray(val)
+      (val) => isString$1(val) || isArray(val)
     );
   }
   function datetimeParts(...args) {
@@ -3858,7 +3857,7 @@ function createComposer(options = {}, VueI18nLegacy) {
       "datetime format",
       (root) => root[DatetimePartsSymbol](...args),
       () => [],
-      (val) => isString(val) || isArray(val)
+      (val) => isString$1(val) || isArray(val)
     );
   }
   function setPluralRules(rules) {
@@ -3866,7 +3865,7 @@ function createComposer(options = {}, VueI18nLegacy) {
     _context.pluralRules = _pluralRules;
   }
   function te(key, locale2) {
-    const targetLocale = isString(locale2) ? locale2 : _locale.value;
+    const targetLocale = isString$1(locale2) ? locale2 : _locale.value;
     const message = getLocaleMessage(targetLocale);
     return _context.messageResolver(message, key) !== null;
   }
@@ -4051,17 +4050,17 @@ function createComposer(options = {}, VueI18nLegacy) {
   return composer;
 }
 function convertComposerOptions(options) {
-  const locale = isString(options.locale) ? options.locale : DEFAULT_LOCALE;
-  const fallbackLocale = isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
-  const missing = isFunction(options.missing) ? options.missing : void 0;
+  const locale = isString$1(options.locale) ? options.locale : DEFAULT_LOCALE;
+  const fallbackLocale = isString$1(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : locale;
+  const missing = isFunction$1(options.missing) ? options.missing : void 0;
   const missingWarn = isBoolean(options.silentTranslationWarn) || isRegExp(options.silentTranslationWarn) ? !options.silentTranslationWarn : true;
   const fallbackWarn = isBoolean(options.silentFallbackWarn) || isRegExp(options.silentFallbackWarn) ? !options.silentFallbackWarn : true;
   const fallbackRoot = isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
   const fallbackFormat = !!options.formatFallbackMessages;
   const modifiers = isPlainObject$1(options.modifiers) ? options.modifiers : {};
   const pluralizationRules = options.pluralizationRules;
-  const postTranslation = isFunction(options.postTranslation) ? options.postTranslation : void 0;
-  const warnHtmlMessage = isString(options.warnHtmlInMessage) ? options.warnHtmlInMessage !== "off" : true;
+  const postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : void 0;
+  const warnHtmlMessage = isString$1(options.warnHtmlInMessage) ? options.warnHtmlInMessage !== "off" : true;
   const escapeParameter = !!options.escapeParameterHtml;
   const inheritLocale = isBoolean(options.sync) ? options.sync : true;
   if (options.formatter) {
@@ -4215,11 +4214,11 @@ function createVueI18n(options = {}, VueI18nLegacy) {
         const options2 = {};
         let list = null;
         let named = null;
-        if (!isString(arg1)) {
+        if (!isString$1(arg1)) {
           throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
         }
         const key = arg1;
-        if (isString(arg2)) {
+        if (isString$1(arg2)) {
           options2.locale = arg2;
         } else if (isArray(arg2)) {
           list = arg2;
@@ -4245,20 +4244,20 @@ function createVueI18n(options = {}, VueI18nLegacy) {
         const options2 = { plural: 1 };
         let list = null;
         let named = null;
-        if (!isString(arg1)) {
+        if (!isString$1(arg1)) {
           throw createI18nError(I18nErrorCodes.INVALID_ARGUMENT);
         }
         const key = arg1;
-        if (isString(arg2)) {
+        if (isString$1(arg2)) {
           options2.locale = arg2;
-        } else if (isNumber(arg2)) {
+        } else if (isNumber$1(arg2)) {
           options2.plural = arg2;
         } else if (isArray(arg2)) {
           list = arg2;
         } else if (isPlainObject$1(arg2)) {
           named = arg2;
         }
-        if (isString(arg3)) {
+        if (isString$1(arg3)) {
           options2.locale = arg3;
         } else if (isArray(arg3)) {
           list = arg3;
@@ -4381,7 +4380,7 @@ const Translation = {
     },
     plural: {
       type: [Number, String],
-      validator: (val) => isNumber(val) || !isNaN(val)
+      validator: (val) => isNumber$1(val) || !isNaN(val)
     }
   }, baseFormatProps),
   setup(props, context) {
@@ -4397,18 +4396,18 @@ const Translation = {
         options.locale = props.locale;
       }
       if (props.plural !== void 0) {
-        options.plural = isString(props.plural) ? +props.plural : props.plural;
+        options.plural = isString$1(props.plural) ? +props.plural : props.plural;
       }
       const arg = getInterpolateArg(context, keys);
       const children = i18n[TransrateVNodeSymbol](props.keypath, arg, options);
       const assignedAttrs = assign$1({}, attrs);
-      const tag = isString(props.tag) || isObject(props.tag) ? props.tag : getFragmentableTag();
+      const tag = isString$1(props.tag) || isObject$1(props.tag) ? props.tag : getFragmentableTag();
       return h$2(tag, assignedAttrs, children);
     };
   }
 };
 function isVNode(target) {
-  return isArray(target) && !isString(target[0]);
+  return isArray(target) && !isString$1(target[0]);
 }
 function renderFormatter(props, context, slotKeys, partFormatter) {
   const { slots, attrs } = context;
@@ -4418,10 +4417,10 @@ function renderFormatter(props, context, slotKeys, partFormatter) {
     if (props.locale) {
       options.locale = props.locale;
     }
-    if (isString(props.format)) {
+    if (isString$1(props.format)) {
       options.key = props.format;
-    } else if (isObject(props.format)) {
-      if (isString(props.format.key)) {
+    } else if (isObject$1(props.format)) {
+      if (isString$1(props.format.key)) {
         options.key = props.format.key;
       }
       overrides = Object.keys(props.format).reduce((options2, prop) => {
@@ -4439,11 +4438,11 @@ function renderFormatter(props, context, slotKeys, partFormatter) {
         }
         return node;
       });
-    } else if (isString(parts)) {
+    } else if (isString$1(parts)) {
       children = [parts];
     }
     const assignedAttrs = assign$1({}, attrs);
-    const tag = isString(props.tag) || isObject(props.tag) ? props.tag : getFragmentableTag();
+    const tag = isString$1(props.tag) || isObject$1(props.tag) ? props.tag : getFragmentableTag();
     return h$2(tag, assignedAttrs, children);
   };
 }
@@ -4536,7 +4535,7 @@ function vTDirective(i18n) {
   };
 }
 function parseValue(value) {
-  if (isString(value)) {
+  if (isString$1(value)) {
     return { path: value };
   } else if (isPlainObject$1(value)) {
     if (!("path" in value)) {
@@ -4551,13 +4550,13 @@ function makeParams(value) {
   const { path, locale, args, choice, plural } = value;
   const options = {};
   const named = args || {};
-  if (isString(locale)) {
+  if (isString$1(locale)) {
     options.locale = locale;
   }
-  if (isNumber(choice)) {
+  if (isNumber$1(choice)) {
     options.plural = choice;
   }
-  if (isNumber(plural)) {
+  if (isNumber$1(plural)) {
     options.plural = plural;
   }
   return [path, named, options];
@@ -4722,9 +4721,9 @@ function getLocaleMessageValue(messages2) {
   const value = {};
   Object.keys(messages2).forEach((key) => {
     const v2 = messages2[key];
-    if (isFunction(v2) && "source" in v2) {
+    if (isFunction$1(v2) && "source" in v2) {
       value[key] = getMessageFunctionDetails(v2);
-    } else if (isObject(v2)) {
+    } else if (isObject$1(v2)) {
       value[key] = getLocaleMessageValue(v2);
     } else {
       value[key] = v2;
@@ -4889,9 +4888,9 @@ function editScope(payload, i18n) {
   const composer = getComposer$1(payload.nodeId, i18n);
   if (composer) {
     const [field] = payload.path;
-    if (field === "locale" && isString(payload.state.value)) {
+    if (field === "locale" && isString$1(payload.state.value)) {
       composer.locale.value = payload.state.value;
-    } else if (field === "fallbackLocale" && (isString(payload.state.value) || isArray(payload.state.value) || isObject(payload.state.value))) {
+    } else if (field === "fallbackLocale" && (isString$1(payload.state.value) || isArray(payload.state.value) || isObject$1(payload.state.value))) {
       composer.fallbackLocale.value = payload.state.value;
     } else if (field === "inheritLocale" && isBoolean(payload.state.value)) {
       composer.inheritLocale = payload.state.value;
@@ -5205,10 +5204,10 @@ function useI18nForLegacy(instance, scope, root, options = {}) {
   }
   const _inheritLocale = isBoolean(options.inheritLocale) ? options.inheritLocale : true;
   const _locale = ref(
-    isLocale && _inheritLocale ? root.locale.value : isString(options.locale) ? options.locale : DEFAULT_LOCALE
+    isLocale && _inheritLocale ? root.locale.value : isString$1(options.locale) ? options.locale : DEFAULT_LOCALE
   );
   const _fallbackLocale = ref(
-    isLocale && _inheritLocale ? root.fallbackLocale.value : isString(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value
+    isLocale && _inheritLocale ? root.fallbackLocale.value : isString$1(options.fallbackLocale) || isArray(options.fallbackLocale) || isPlainObject$1(options.fallbackLocale) || options.fallbackLocale === false ? options.fallbackLocale : _locale.value
   );
   const _messages = ref(getLocaleMessages(_locale.value, options));
   const _datetimeFormats = ref(isPlainObject$1(options.datetimeFormats) ? options.datetimeFormats : { [_locale.value]: {} });
@@ -5217,8 +5216,8 @@ function useI18nForLegacy(instance, scope, root, options = {}) {
   const _fallbackWarn = isLocale ? root.fallbackWarn : isBoolean(options.fallbackWarn) || isRegExp(options.fallbackWarn) ? options.fallbackWarn : true;
   const _fallbackRoot = isLocale ? root.fallbackRoot : isBoolean(options.fallbackRoot) ? options.fallbackRoot : true;
   const _fallbackFormat = !!options.fallbackFormat;
-  const _missing = isFunction(options.missing) ? options.missing : null;
-  const _postTranslation = isFunction(options.postTranslation) ? options.postTranslation : null;
+  const _missing = isFunction$1(options.missing) ? options.missing : null;
+  const _postTranslation = isFunction$1(options.postTranslation) ? options.postTranslation : null;
   const _warnHtmlMessage = isLocale ? root.warnHtmlMessage : isBoolean(options.warnHtmlMessage) ? options.warnHtmlMessage : true;
   const _escapeParameter = !!options.escapeParameter;
   const _modifiers = isLocale ? root.modifiers : isPlainObject$1(options.modifiers) ? options.modifiers : {};
@@ -6335,86 +6334,86 @@ const Anchor = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
 const meta$5 = {
   layout: "page"
 };
-const _hoisted_1$m = {
+const _hoisted_1$n = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 36 36",
   width: "1.2em",
   height: "1.2em"
 };
-const _hoisted_2$m = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$n = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "m19.41 18l8.29-8.29a1 1 0 0 0-1.41-1.41L18 16.59l-8.29-8.3a1 1 0 0 0-1.42 1.42l8.3 8.29l-8.3 8.29A1 1 0 1 0 9.7 27.7l8.3-8.29l8.29 8.29a1 1 0 0 0 1.41-1.41Z",
   class: "clr-i-outline clr-i-outline-path-1"
 }, null, -1);
-const _hoisted_3$m = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_3$n = /* @__PURE__ */ createElementVNode("path", {
   fill: "none",
   d: "M0 0h36v36H0z"
 }, null, -1);
 const _hoisted_4$2 = [
-  _hoisted_2$m,
-  _hoisted_3$m
+  _hoisted_2$n,
+  _hoisted_3$n
 ];
-function render$m(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$m, _hoisted_4$2);
+function render$n(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$n, _hoisted_4$2);
 }
-const __unplugin_components_3$2 = { name: "clarity-times-line", render: render$m };
-const _hoisted_1$l = {
+const __unplugin_components_3$2 = { name: "clarity-times-line", render: render$n };
+const _hoisted_1$m = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 16 16",
   width: "1.2em",
   height: "1.2em"
 };
-const _hoisted_2$l = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$m = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2z"
 }, null, -1);
-const _hoisted_3$l = [
-  _hoisted_2$l
+const _hoisted_3$m = [
+  _hoisted_2$m
 ];
-function render$l(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$l, _hoisted_3$l);
+function render$m(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$m, _hoisted_3$m);
 }
-const __unplugin_components_2$3 = { name: "bi-exclamation-circle-fill", render: render$l };
-const _hoisted_1$k = {
+const __unplugin_components_2$3 = { name: "bi-exclamation-circle-fill", render: render$m };
+const _hoisted_1$l = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 36 36",
   width: "1.2em",
   height: "1.2em"
 };
-const _hoisted_2$k = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$l = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "M18 2a16 16 0 1 0 16 16A16 16 0 0 0 18 2Zm8 22.1a1.4 1.4 0 0 1-2 2l-6-6l-6 6.02a1.4 1.4 0 1 1-2-2l6-6.04l-6.17-6.22a1.4 1.4 0 1 1 2-2L18 16.1l6.17-6.17a1.4 1.4 0 1 1 2 2L20 18.08Z",
   class: "clr-i-solid clr-i-solid-path-1"
 }, null, -1);
-const _hoisted_3$k = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_3$l = /* @__PURE__ */ createElementVNode("path", {
   fill: "none",
   d: "M0 0h36v36H0z"
 }, null, -1);
 const _hoisted_4$1 = [
-  _hoisted_2$k,
-  _hoisted_3$k
+  _hoisted_2$l,
+  _hoisted_3$l
 ];
-function render$k(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$k, _hoisted_4$1);
+function render$l(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$l, _hoisted_4$1);
 }
-const __unplugin_components_1$4 = { name: "clarity-times-circle-solid", render: render$k };
-const _hoisted_1$j = {
+const __unplugin_components_1$4 = { name: "clarity-times-circle-solid", render: render$l };
+const _hoisted_1$k = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 24 24",
   width: "1.2em",
   height: "1.2em"
 };
-const _hoisted_2$j = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$k = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"
 }, null, -1);
-const _hoisted_3$j = [
-  _hoisted_2$j
+const _hoisted_3$k = [
+  _hoisted_2$k
 ];
-function render$j(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$j, _hoisted_3$j);
+function render$k(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$k, _hoisted_3$k);
 }
-const __unplugin_components_0$9 = { name: "mdi-check-circle", render: render$j };
+const __unplugin_components_0$9 = { name: "mdi-check-circle", render: render$k };
 function u$4(r2, n2, ...a2) {
   if (r2 in n2) {
     let e2 = n2[r2];
@@ -8912,15 +8911,32 @@ const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   default: _sfc_main$K
 }, Symbol.toStringTag, { value: "Module" }));
-const _hoisted_1$i = {
+const _hoisted_1$j = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 192 512",
   width: "1.2em",
   height: "1.2em"
 };
-const _hoisted_2$i = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$j = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72s-72-32.2-72-72s32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8S24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72s-32.2-72-72-72s-72 32.2-72 72z"
+}, null, -1);
+const _hoisted_3$j = [
+  _hoisted_2$j
+];
+function render$j(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$j, _hoisted_3$j);
+}
+const __unplugin_components_4 = { name: "fa-solid-ellipsis-v", render: render$j };
+const _hoisted_1$i = {
+  preserveAspectRatio: "xMidYMid meet",
+  viewBox: "0 0 1568 1280",
+  width: "1.2em",
+  height: "1.2em"
+};
+const _hoisted_2$i = /* @__PURE__ */ createElementVNode("path", {
+  fill: "currentColor",
+  d: "M640 1184q0 4 1 20t.5 26.5t-3 23.5t-10 19.5t-20.5 6.5H288q-119 0-203.5-84.5T0 992V288Q0 169 84.5 84.5T288 0h320q13 0 22.5 9.5T640 32q0 4 1 20t.5 26.5t-3 23.5t-10 19.5T608 128H288q-66 0-113 47t-47 113v704q0 66 47 113t113 47h312l11.5 1l11.5 3l8 5.5l7 9l2 13.5zm928-544q0 26-19 45l-544 544q-19 19-45 19t-45-19t-19-45V896H448q-26 0-45-19t-19-45V448q0-26 19-45t45-19h448V96q0-26 19-45t45-19t45 19l544 544q19 19 19 45z"
 }, null, -1);
 const _hoisted_3$i = [
   _hoisted_2$i
@@ -8928,16 +8944,16 @@ const _hoisted_3$i = [
 function render$i(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$i, _hoisted_3$i);
 }
-const __unplugin_components_4 = { name: "fa-solid-ellipsis-v", render: render$i };
+const __unplugin_components_3$1 = { name: "fa-sign-out", render: render$i };
 const _hoisted_1$h = {
   preserveAspectRatio: "xMidYMid meet",
-  viewBox: "0 0 1568 1280",
+  viewBox: "0 0 1664 1312",
   width: "1.2em",
   height: "1.2em"
 };
 const _hoisted_2$h = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
-  d: "M640 1184q0 4 1 20t.5 26.5t-3 23.5t-10 19.5t-20.5 6.5H288q-119 0-203.5-84.5T0 992V288Q0 169 84.5 84.5T288 0h320q13 0 22.5 9.5T640 32q0 4 1 20t.5 26.5t-3 23.5t-10 19.5T608 128H288q-66 0-113 47t-47 113v704q0 66 47 113t113 47h312l11.5 1l11.5 3l8 5.5l7 9l2 13.5zm928-544q0 26-19 45l-544 544q-19 19-45 19t-45-19t-19-45V896H448q-26 0-45-19t-19-45V448q0-26 19-45t45-19h448V96q0-26 19-45t45-19t45 19l544 544q19 19 19 45z"
+  d: "M1408 768v480q0 26-19 45t-45 19H960V928H704v384H320q-26 0-45-19t-19-45V768q0-1 .5-3t.5-3l575-474l575 474q1 2 1 6zm223-69l-62 74q-8 9-21 11h-3q-13 0-21-7L832 200L140 777q-12 8-24 7q-13-2-21-11l-62-74q-8-10-7-23.5T37 654L756 55q32-26 76-26t76 26l244 204V64q0-14 9-23t23-9h192q14 0 23 9t9 23v408l219 182q10 8 11 21.5t-7 23.5z"
 }, null, -1);
 const _hoisted_3$h = [
   _hoisted_2$h
@@ -8945,16 +8961,16 @@ const _hoisted_3$h = [
 function render$h(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$h, _hoisted_3$h);
 }
-const __unplugin_components_3$1 = { name: "fa-sign-out", render: render$h };
+const __unplugin_components_2$2 = { name: "fa-home", render: render$h };
 const _hoisted_1$g = {
   preserveAspectRatio: "xMidYMid meet",
-  viewBox: "0 0 1664 1312",
+  viewBox: "0 0 24 24",
   width: "1.2em",
   height: "1.2em"
 };
 const _hoisted_2$g = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
-  d: "M1408 768v480q0 26-19 45t-45 19H960V928H704v384H320q-26 0-45-19t-19-45V768q0-1 .5-3t.5-3l575-474l575 474q1 2 1 6zm223-69l-62 74q-8 9-21 11h-3q-13 0-21-7L832 200L140 777q-12 8-24 7q-13-2-21-11l-62-74q-8-10-7-23.5T37 654L756 55q32-26 76-26t76 26l244 204V64q0-14 9-23t23-9h192q14 0 23 9t9 23v408l219 182q10 8 11 21.5t-7 23.5z"
+  d: "m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"
 }, null, -1);
 const _hoisted_3$g = [
   _hoisted_2$g
@@ -8962,7 +8978,7 @@ const _hoisted_3$g = [
 function render$g(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$g, _hoisted_3$g);
 }
-const __unplugin_components_2$2 = { name: "fa-home", render: render$g };
+const __unplugin_components_1$3 = { name: "uil-times", render: render$g };
 const _hoisted_1$f = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 24 24",
@@ -8971,7 +8987,7 @@ const _hoisted_1$f = {
 };
 const _hoisted_2$f = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
-  d: "m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"
+  d: "M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"
 }, null, -1);
 const _hoisted_3$f = [
   _hoisted_2$f
@@ -8979,24 +8995,7 @@ const _hoisted_3$f = [
 function render$f(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$f, _hoisted_3$f);
 }
-const __unplugin_components_1$3 = { name: "uil-times", render: render$f };
-const _hoisted_1$e = {
-  preserveAspectRatio: "xMidYMid meet",
-  viewBox: "0 0 24 24",
-  width: "1.2em",
-  height: "1.2em"
-};
-const _hoisted_2$e = /* @__PURE__ */ createElementVNode("path", {
-  fill: "currentColor",
-  d: "M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"
-}, null, -1);
-const _hoisted_3$e = [
-  _hoisted_2$e
-];
-function render$e(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$e, _hoisted_3$e);
-}
-const __unplugin_components_0$8 = { name: "uil-bars", render: render$e };
+const __unplugin_components_0$8 = { name: "uil-bars", render: render$f };
 const _imports_0 = "" + globalThis.__publicAssetsURL("assets/icons/foody.png");
 const _sfc_main$J = /* @__PURE__ */ defineComponent({
   __name: "Navbar",
@@ -9232,23 +9231,23 @@ const Navbar$3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProp
   __proto__: null,
   default: _sfc_main$J
 }, Symbol.toStringTag, { value: "Module" }));
-const _hoisted_1$d = {
+const _hoisted_1$e = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 32 32",
   width: "1.2em",
   height: "1.2em"
 };
-const _hoisted_2$d = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$e = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "M4 4v18h6v6h18V10h-6V4zm2 2h14v4.563L10.562 20H6zm5 2v1H8v2h4.938c-.13 1.148-.481 2.055-1.063 2.688a4.544 4.544 0 0 1-.906-.407C10.266 12.863 10 12.418 10 12H8c0 1.191.734 2.184 1.719 2.844A8.267 8.267 0 0 1 8 15v2c1.773 0 3.25-.406 4.375-1.156c.523.09 1.055.156 1.625.156v-1.875c.543-.91.832-1.973.938-3.125H16V9h-3V8zm10.438 4H26v14H12v-4.563zM20 13.844l-.938 2.844l-2 6l-.062.156V24h2v-.875l.031-.125h1.938l.031.125V24h2v-1.156l-.063-.157l-2-6zm0 6.281l.281.875h-.562z"
 }, null, -1);
-const _hoisted_3$d = [
-  _hoisted_2$d
+const _hoisted_3$e = [
+  _hoisted_2$e
 ];
-function render$d(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$d, _hoisted_3$d);
+function render$e(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$e, _hoisted_3$e);
 }
-const __unplugin_components_0$7 = { name: "la-language", render: render$d };
+const __unplugin_components_0$7 = { name: "la-language", render: render$e };
 const availableLocales = {
   en: {
     name: "English",
@@ -9491,6 +9490,23 @@ const LanguageSwitcher = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   __proto__: null,
   default: _sfc_main$I
 }, Symbol.toStringTag, { value: "Module" }));
+const _hoisted_1$d = {
+  preserveAspectRatio: "xMidYMid meet",
+  viewBox: "0 0 24 24",
+  width: "1.2em",
+  height: "1.2em"
+};
+const _hoisted_2$d = /* @__PURE__ */ createElementVNode("path", {
+  fill: "currentColor",
+  d: "M15.098 12.634L13 11.423V7a1 1 0 0 0-2 0v5a1 1 0 0 0 .5.866l2.598 1.5a1 1 0 1 0 1-1.732ZM12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8a8.01 8.01 0 0 1-8 8Z"
+}, null, -1);
+const _hoisted_3$d = [
+  _hoisted_2$d
+];
+function render$d(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$d, _hoisted_3$d);
+}
+const __unplugin_components_3 = { name: "uil-clock", render: render$d };
 const _hoisted_1$c = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 24 24",
@@ -9499,7 +9515,7 @@ const _hoisted_1$c = {
 };
 const _hoisted_2$c = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
-  d: "M15.098 12.634L13 11.423V7a1 1 0 0 0-2 0v5a1 1 0 0 0 .5.866l2.598 1.5a1 1 0 1 0 1-1.732ZM12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8a8.01 8.01 0 0 1-8 8Z"
+  d: "M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16Z"
 }, null, -1);
 const _hoisted_3$c = [
   _hoisted_2$c
@@ -9507,7 +9523,7 @@ const _hoisted_3$c = [
 function render$c(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$c, _hoisted_3$c);
 }
-const __unplugin_components_3 = { name: "uil-clock", render: render$c };
+const __unplugin_components_2$1 = { name: "uil-laptop", render: render$c };
 const _hoisted_1$b = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 24 24",
@@ -9516,7 +9532,7 @@ const _hoisted_1$b = {
 };
 const _hoisted_2$b = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
-  d: "M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16Z"
+  d: "M21.64 13a1 1 0 0 0-1.05-.14a8.05 8.05 0 0 1-3.37.73a8.15 8.15 0 0 1-8.14-8.1a8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69a1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14a9.79 9.79 0 0 0 2.1-.22a8.11 8.11 0 0 1-7.18 4.32Z"
 }, null, -1);
 const _hoisted_3$b = [
   _hoisted_2$b
@@ -9524,7 +9540,7 @@ const _hoisted_3$b = [
 function render$b(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$b, _hoisted_3$b);
 }
-const __unplugin_components_2$1 = { name: "uil-laptop", render: render$b };
+const __unplugin_components_1$2 = { name: "uil-moon", render: render$b };
 const _hoisted_1$a = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 24 24",
@@ -9533,7 +9549,7 @@ const _hoisted_1$a = {
 };
 const _hoisted_2$a = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
-  d: "M21.64 13a1 1 0 0 0-1.05-.14a8.05 8.05 0 0 1-3.37.73a8.15 8.15 0 0 1-8.14-8.1a8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69a1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14a9.79 9.79 0 0 0 2.1-.22a8.11 8.11 0 0 1-7.18 4.32Z"
+  d: "m5.64 17l-.71.71a1 1 0 0 0 0 1.41a1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm7-7a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1ZM5.64 7.05a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.29a1 1 0 0 0 0-1.41l-.71-.71a1 1 0 0 0-1.41 1.41Zm12 .29a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.64.71a1 1 0 0 0 0 1.41a1 1 0 0 0 .66.29ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-9 8a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Zm6.36-2A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0a1 1 0 0 0 0-1.41ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 3.5-3.5a3.5 3.5 0 0 1-3.5 3.5Z"
 }, null, -1);
 const _hoisted_3$a = [
   _hoisted_2$a
@@ -9541,24 +9557,7 @@ const _hoisted_3$a = [
 function render$a(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$a, _hoisted_3$a);
 }
-const __unplugin_components_1$2 = { name: "uil-moon", render: render$a };
-const _hoisted_1$9 = {
-  preserveAspectRatio: "xMidYMid meet",
-  viewBox: "0 0 24 24",
-  width: "1.2em",
-  height: "1.2em"
-};
-const _hoisted_2$9 = /* @__PURE__ */ createElementVNode("path", {
-  fill: "currentColor",
-  d: "m5.64 17l-.71.71a1 1 0 0 0 0 1.41a1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm7-7a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1ZM5.64 7.05a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.29a1 1 0 0 0 0-1.41l-.71-.71a1 1 0 0 0-1.41 1.41Zm12 .29a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.64.71a1 1 0 0 0 0 1.41a1 1 0 0 0 .66.29ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-9 8a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Zm6.36-2A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0a1 1 0 0 0 0-1.41ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 3.5-3.5a3.5 3.5 0 0 1-3.5 3.5Z"
-}, null, -1);
-const _hoisted_3$9 = [
-  _hoisted_2$9
-];
-function render$9(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$9, _hoisted_3$9);
-}
-const __unplugin_components_0$6 = { name: "uil-sun", render: render$9 };
+const __unplugin_components_0$6 = { name: "uil-sun", render: render$a };
 const availableThemes = [
   { key: "light", text: "Light" },
   { key: "dark", text: "Dark" },
@@ -9820,6 +9819,23 @@ const ThemeSwitcher = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defin
   __proto__: null,
   default: _sfc_main$H
 }, Symbol.toStringTag, { value: "Module" }));
+const _hoisted_1$9 = {
+  preserveAspectRatio: "xMidYMid meet",
+  viewBox: "0 0 24 24",
+  width: "1.2em",
+  height: "1.2em"
+};
+const _hoisted_2$9 = /* @__PURE__ */ createElementVNode("path", {
+  d: "M20.38 8.53c.16-.4.68-1.99-.17-4.14c0 0-1.31-.39-4.3 1.61c-1.25-.33-2.58-.38-3.91-.38c-1.32 0-2.66.05-3.91.38c-2.99-2.03-4.3-1.61-4.3-1.61c-.85 2.15-.33 3.74-.16 4.14C2.61 9.62 2 11 2 12.72c0 6.44 4.16 7.89 10 7.89c5.79 0 10-1.45 10-7.89c0-1.72-.61-3.1-1.62-4.19M12 19.38c-4.12 0-7.47-.19-7.47-4.19c0-.95.47-1.85 1.27-2.58c1.34-1.23 3.63-.58 6.2-.58c2.59 0 4.85-.65 6.2.58c.8.73 1.3 1.62 1.3 2.58c0 3.99-3.37 4.19-7.5 4.19m-3.14-6.26c-.82 0-1.5 1-1.5 2.22c0 1.23.68 2.24 1.5 2.24c.83 0 1.5-1 1.5-2.24c0-1.23-.67-2.22-1.5-2.22m6.28 0c-.83 0-1.5.99-1.5 2.22c0 1.24.67 2.24 1.5 2.24c.82 0 1.5-1 1.5-2.24c0-1.23-.64-2.22-1.5-2.22z",
+  fill: "currentColor"
+}, null, -1);
+const _hoisted_3$9 = [
+  _hoisted_2$9
+];
+function render$9(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$9, _hoisted_3$9);
+}
+const __unplugin_components_0$5 = { name: "mdi-github-face", render: render$9 };
 const _hoisted_1$8 = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 24 24",
@@ -9827,8 +9843,8 @@ const _hoisted_1$8 = {
   height: "1.2em"
 };
 const _hoisted_2$8 = /* @__PURE__ */ createElementVNode("path", {
-  d: "M20.38 8.53c.16-.4.68-1.99-.17-4.14c0 0-1.31-.39-4.3 1.61c-1.25-.33-2.58-.38-3.91-.38c-1.32 0-2.66.05-3.91.38c-2.99-2.03-4.3-1.61-4.3-1.61c-.85 2.15-.33 3.74-.16 4.14C2.61 9.62 2 11 2 12.72c0 6.44 4.16 7.89 10 7.89c5.79 0 10-1.45 10-7.89c0-1.72-.61-3.1-1.62-4.19M12 19.38c-4.12 0-7.47-.19-7.47-4.19c0-.95.47-1.85 1.27-2.58c1.34-1.23 3.63-.58 6.2-.58c2.59 0 4.85-.65 6.2.58c.8.73 1.3 1.62 1.3 2.58c0 3.99-3.37 4.19-7.5 4.19m-3.14-6.26c-.82 0-1.5 1-1.5 2.22c0 1.23.68 2.24 1.5 2.24c.83 0 1.5-1 1.5-2.24c0-1.23-.67-2.22-1.5-2.22m6.28 0c-.83 0-1.5.99-1.5 2.22c0 1.24.67 2.24 1.5 2.24c.82 0 1.5-1 1.5-2.24c0-1.23-.64-2.22-1.5-2.22z",
-  fill: "currentColor"
+  fill: "currentColor",
+  d: "M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42Z"
 }, null, -1);
 const _hoisted_3$8 = [
   _hoisted_2$8
@@ -9836,24 +9852,7 @@ const _hoisted_3$8 = [
 function render$8(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$8, _hoisted_3$8);
 }
-const __unplugin_components_0$5 = { name: "mdi-github-face", render: render$8 };
-const _hoisted_1$7 = {
-  preserveAspectRatio: "xMidYMid meet",
-  viewBox: "0 0 24 24",
-  width: "1.2em",
-  height: "1.2em"
-};
-const _hoisted_2$7 = /* @__PURE__ */ createElementVNode("path", {
-  fill: "currentColor",
-  d: "M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42Z"
-}, null, -1);
-const _hoisted_3$7 = [
-  _hoisted_2$7
-];
-function render$7(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$7, _hoisted_3$7);
-}
-const __unplugin_components_0$4 = { name: "uil-angle-down", render: render$7 };
+const __unplugin_components_0$4 = { name: "uil-angle-down", render: render$8 };
 const _sfc_main$G = {};
 function _sfc_ssrRender$l(_ctx, _push, _parent, _attrs) {
   const _component_BuilderNavbar = _sfc_main$J;
@@ -10079,7 +10078,7 @@ const Navbar$2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProp
   default: Navbar$1
 }, Symbol.toStringTag, { value: "Module" }));
 const ax = axios.create({
-  baseURL: "http://103.13.207.24/api"
+  baseURL: "http://localhost/api/"
 });
 const useHttp = () => {
   return ax;
@@ -10109,15 +10108,32 @@ const useApi = () => {
     create
   };
 };
-const _hoisted_1$6 = {
+const _hoisted_1$7 = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 1408 1536",
   width: "1.2em",
   height: "1.2em"
 };
-const _hoisted_2$6 = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$7 = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
   d: "M512 1248V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zM480 256h448l-48-117q-7-9-17-11H546q-10 2-17 11zm928 32v64q0 14-9 23t-23 9h-96v948q0 83-47 143.5t-113 60.5H288q-66 0-113-58.5T128 1336V384H32q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h309l70-167q15-37 54-63t79-26h320q40 0 79 26t54 63l70 167h309q14 0 23 9t9 23z"
+}, null, -1);
+const _hoisted_3$7 = [
+  _hoisted_2$7
+];
+function render$7(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_1$7, _hoisted_3$7);
+}
+const __unplugin_components_1$1 = { name: "fa-trash", render: render$7 };
+const _hoisted_1$6 = {
+  preserveAspectRatio: "xMidYMid meet",
+  viewBox: "0 0 1536 1536",
+  width: "1.2em",
+  height: "1.2em"
+};
+const _hoisted_2$6 = /* @__PURE__ */ createElementVNode("path", {
+  fill: "currentColor",
+  d: "m363 1408l91-91l-235-235l-91 91v107h128v128h107zm523-928q0-22-22-22q-10 0-17 7l-542 542q-7 7-7 17q0 22 22 22q10 0 17-7l542-542q7-7 7-17zm-54-192l416 416l-832 832H0v-416zm683 96q0 53-37 90l-166 166l-416-416l166-165q36-38 90-38q53 0 91 38l235 234q37 39 37 91z"
 }, null, -1);
 const _hoisted_3$6 = [
   _hoisted_2$6
@@ -10125,24 +10141,916 @@ const _hoisted_3$6 = [
 function render$6(_ctx, _cache) {
   return openBlock(), createElementBlock("svg", _hoisted_1$6, _hoisted_3$6);
 }
-const __unplugin_components_1$1 = { name: "fa-trash", render: render$6 };
-const _hoisted_1$5 = {
-  preserveAspectRatio: "xMidYMid meet",
-  viewBox: "0 0 1536 1536",
-  width: "1.2em",
-  height: "1.2em"
+const __unplugin_components_0$3 = { name: "fa-pencil", render: render$6 };
+var __defProp$1 = Object.defineProperty;
+var __getOwnPropSymbols$1 = Object.getOwnPropertySymbols;
+var __hasOwnProp$1 = Object.prototype.hasOwnProperty;
+var __propIsEnum$1 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp$1 = (obj, key, value) => key in obj ? __defProp$1(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues$1 = (a2, b2) => {
+  for (var prop in b2 || (b2 = {}))
+    if (__hasOwnProp$1.call(b2, prop))
+      __defNormalProp$1(a2, prop, b2[prop]);
+  if (__getOwnPropSymbols$1)
+    for (var prop of __getOwnPropSymbols$1(b2)) {
+      if (__propIsEnum$1.call(b2, prop))
+        __defNormalProp$1(a2, prop, b2[prop]);
+    }
+  return a2;
 };
-const _hoisted_2$5 = /* @__PURE__ */ createElementVNode("path", {
+var isFunction = (value) => typeof value === "function";
+var isString = (value) => typeof value === "string";
+var isNonEmptyString = (value) => isString(value) && value.trim().length > 0;
+var isNumber = (value) => typeof value === "number";
+var isUndefined = (value) => typeof value === "undefined";
+var isObject = (value) => typeof value === "object" && value !== null;
+var isJSX = (obj) => hasProp(obj, "tag") && isNonEmptyString(obj.tag);
+var isTouchEvent = (event) => window.TouchEvent && event instanceof TouchEvent;
+var isToastComponent = (obj) => hasProp(obj, "component") && isToastContent(obj.component);
+var isVueComponent = (c2) => isFunction(c2) || isObject(c2);
+var isToastContent = (obj) => !isUndefined(obj) && (isString(obj) || isVueComponent(obj) || isToastComponent(obj));
+var isDOMRect = (obj) => isObject(obj) && ["height", "width", "right", "left", "top", "bottom"].every((p2) => isNumber(obj[p2]));
+var hasProp = (obj, propKey) => (isObject(obj) || isFunction(obj)) && propKey in obj;
+function getX(event) {
+  return isTouchEvent(event) ? event.targetTouches[0].clientX : event.clientX;
+}
+function getY(event) {
+  return isTouchEvent(event) ? event.targetTouches[0].clientY : event.clientY;
+}
+var removeElement = (el) => {
+  if (!isUndefined(el.remove)) {
+    el.remove();
+  } else if (el.parentNode) {
+    el.parentNode.removeChild(el);
+  }
+};
+var getVueComponentFromObj = (obj) => {
+  if (isToastComponent(obj)) {
+    return getVueComponentFromObj(obj.component);
+  }
+  if (isJSX(obj)) {
+    return defineComponent({
+      render() {
+        return obj;
+      }
+    });
+  }
+  return typeof obj === "string" ? obj : toRaw(unref(obj));
+};
+var normalizeToastComponent = (obj) => {
+  if (typeof obj === "string") {
+    return obj;
+  }
+  const props = hasProp(obj, "props") && isObject(obj.props) ? obj.props : {};
+  const listeners = hasProp(obj, "listeners") && isObject(obj.listeners) ? obj.listeners : {};
+  return { component: getVueComponentFromObj(obj), props, listeners };
+};
+var EventBus = class {
+  constructor() {
+    this.allHandlers = {};
+  }
+  getHandlers(eventType) {
+    return this.allHandlers[eventType] || [];
+  }
+  on(eventType, handler) {
+    const handlers2 = this.getHandlers(eventType);
+    handlers2.push(handler);
+    this.allHandlers[eventType] = handlers2;
+  }
+  off(eventType, handler) {
+    const handlers2 = this.getHandlers(eventType);
+    handlers2.splice(handlers2.indexOf(handler) >>> 0, 1);
+  }
+  emit(eventType, event) {
+    const handlers2 = this.getHandlers(eventType);
+    handlers2.forEach((handler) => handler(event));
+  }
+};
+var TYPE;
+(function(TYPE2) {
+  TYPE2["SUCCESS"] = "success";
+  TYPE2["ERROR"] = "error";
+  TYPE2["WARNING"] = "warning";
+  TYPE2["INFO"] = "info";
+  TYPE2["DEFAULT"] = "default";
+})(TYPE || (TYPE = {}));
+var POSITION;
+(function(POSITION2) {
+  POSITION2["TOP_LEFT"] = "top-left";
+  POSITION2["TOP_CENTER"] = "top-center";
+  POSITION2["TOP_RIGHT"] = "top-right";
+  POSITION2["BOTTOM_LEFT"] = "bottom-left";
+  POSITION2["BOTTOM_CENTER"] = "bottom-center";
+  POSITION2["BOTTOM_RIGHT"] = "bottom-right";
+})(POSITION || (POSITION = {}));
+var EVENTS;
+(function(EVENTS2) {
+  EVENTS2["ADD"] = "add";
+  EVENTS2["DISMISS"] = "dismiss";
+  EVENTS2["UPDATE"] = "update";
+  EVENTS2["CLEAR"] = "clear";
+  EVENTS2["UPDATE_DEFAULTS"] = "update_defaults";
+})(EVENTS || (EVENTS = {}));
+var VT_NAMESPACE = "Vue-Toastification";
+var COMMON = {
+  type: {
+    type: String,
+    default: TYPE.DEFAULT
+  },
+  classNames: {
+    type: [String, Array],
+    default: () => []
+  },
+  trueBoolean: {
+    type: Boolean,
+    default: true
+  }
+};
+var ICON = {
+  type: COMMON.type,
+  customIcon: {
+    type: [String, Boolean, Object, Function],
+    default: true
+  }
+};
+var CLOSE_BUTTON = {
+  component: {
+    type: [String, Object, Function, Boolean],
+    default: "button"
+  },
+  classNames: COMMON.classNames,
+  showOnHover: {
+    type: Boolean,
+    default: false
+  },
+  ariaLabel: {
+    type: String,
+    default: "close"
+  }
+};
+var PROGRESS_BAR = {
+  timeout: {
+    type: [Number, Boolean],
+    default: 5e3
+  },
+  hideProgressBar: {
+    type: Boolean,
+    default: false
+  },
+  isRunning: {
+    type: Boolean,
+    default: false
+  }
+};
+var TRANSITION = {
+  transition: {
+    type: [Object, String],
+    default: `${VT_NAMESPACE}__bounce`
+  }
+};
+var CORE_TOAST = {
+  position: {
+    type: String,
+    default: POSITION.TOP_RIGHT
+  },
+  draggable: COMMON.trueBoolean,
+  draggablePercent: {
+    type: Number,
+    default: 0.6
+  },
+  pauseOnFocusLoss: COMMON.trueBoolean,
+  pauseOnHover: COMMON.trueBoolean,
+  closeOnClick: COMMON.trueBoolean,
+  timeout: PROGRESS_BAR.timeout,
+  hideProgressBar: PROGRESS_BAR.hideProgressBar,
+  toastClassName: COMMON.classNames,
+  bodyClassName: COMMON.classNames,
+  icon: ICON.customIcon,
+  closeButton: CLOSE_BUTTON.component,
+  closeButtonClassName: CLOSE_BUTTON.classNames,
+  showCloseButtonOnHover: CLOSE_BUTTON.showOnHover,
+  accessibility: {
+    type: Object,
+    default: () => ({
+      toastRole: "alert",
+      closeButtonLabel: "close"
+    })
+  },
+  rtl: {
+    type: Boolean,
+    default: false
+  },
+  eventBus: {
+    type: Object,
+    required: false,
+    default: () => new EventBus()
+  }
+};
+var TOAST = {
+  id: {
+    type: [String, Number],
+    required: true,
+    default: 0
+  },
+  type: COMMON.type,
+  content: {
+    type: [String, Object, Function],
+    required: true,
+    default: ""
+  },
+  onClick: {
+    type: Function,
+    default: void 0
+  },
+  onClose: {
+    type: Function,
+    default: void 0
+  }
+};
+var CONTAINER = {
+  container: {
+    type: [
+      Object,
+      Function
+    ],
+    default: () => document.body
+  },
+  newestOnTop: COMMON.trueBoolean,
+  maxToasts: {
+    type: Number,
+    default: 20
+  },
+  transition: TRANSITION.transition,
+  toastDefaults: Object,
+  filterBeforeCreate: {
+    type: Function,
+    default: (toast) => toast
+  },
+  filterToasts: {
+    type: Function,
+    default: (toasts) => toasts
+  },
+  containerClassName: COMMON.classNames,
+  onMounted: Function,
+  shareAppContext: [Boolean, Object]
+};
+var propValidators_default = {
+  CORE_TOAST,
+  TOAST,
+  CONTAINER,
+  PROGRESS_BAR,
+  ICON,
+  TRANSITION,
+  CLOSE_BUTTON
+};
+var VtProgressBar_default = defineComponent({
+  name: "VtProgressBar",
+  props: propValidators_default.PROGRESS_BAR,
+  data() {
+    return {
+      hasClass: true
+    };
+  },
+  computed: {
+    style() {
+      return {
+        animationDuration: `${this.timeout}ms`,
+        animationPlayState: this.isRunning ? "running" : "paused",
+        opacity: this.hideProgressBar ? 0 : 1
+      };
+    },
+    cpClass() {
+      return this.hasClass ? `${VT_NAMESPACE}__progress-bar` : "";
+    }
+  },
+  watch: {
+    timeout() {
+      this.hasClass = false;
+      this.$nextTick(() => this.hasClass = true);
+    }
+  },
+  mounted() {
+    this.$el.addEventListener("animationend", this.animationEnded);
+  },
+  beforeUnmount() {
+    this.$el.removeEventListener("animationend", this.animationEnded);
+  },
+  methods: {
+    animationEnded() {
+      this.$emit("close-toast");
+    }
+  }
+});
+function render$5(_ctx, _cache) {
+  return openBlock(), createElementBlock("div", {
+    style: normalizeStyle(_ctx.style),
+    class: normalizeClass(_ctx.cpClass)
+  }, null, 6);
+}
+VtProgressBar_default.render = render$5;
+var VtProgressBar_default2 = VtProgressBar_default;
+var VtCloseButton_default = defineComponent({
+  name: "VtCloseButton",
+  props: propValidators_default.CLOSE_BUTTON,
+  computed: {
+    buttonComponent() {
+      if (this.component !== false) {
+        return getVueComponentFromObj(this.component);
+      }
+      return "button";
+    },
+    classes() {
+      const classes = [`${VT_NAMESPACE}__close-button`];
+      if (this.showOnHover) {
+        classes.push("show-on-hover");
+      }
+      return classes.concat(this.classNames);
+    }
+  }
+});
+var _hoisted_1$5 = /* @__PURE__ */ createTextVNode(" \xD7 ");
+function render2(_ctx, _cache) {
+  return openBlock(), createBlock(resolveDynamicComponent(_ctx.buttonComponent), mergeProps({
+    "aria-label": _ctx.ariaLabel,
+    class: _ctx.classes
+  }, _ctx.$attrs), {
+    default: withCtx(() => [
+      _hoisted_1$5
+    ]),
+    _: 1
+  }, 16, ["aria-label", "class"]);
+}
+VtCloseButton_default.render = render2;
+var VtCloseButton_default2 = VtCloseButton_default;
+var VtSuccessIcon_default = {};
+var _hoisted_12 = {
+  "aria-hidden": "true",
+  focusable: "false",
+  "data-prefix": "fas",
+  "data-icon": "check-circle",
+  class: "svg-inline--fa fa-check-circle fa-w-16",
+  role: "img",
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 512 512"
+};
+var _hoisted_2$5 = /* @__PURE__ */ createElementVNode("path", {
   fill: "currentColor",
-  d: "m363 1408l91-91l-235-235l-91 91v107h128v128h107zm523-928q0-22-22-22q-10 0-17 7l-542 542q-7 7-7 17q0 22 22 22q10 0 17-7l542-542q7-7 7-17zm-54-192l416 416l-832 832H0v-416zm683 96q0 53-37 90l-166 166l-416-416l166-165q36-38 90-38q53 0 91 38l235 234q37 39 37 91z"
+  d: "M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
 }, null, -1);
-const _hoisted_3$5 = [
+var _hoisted_3$5 = [
   _hoisted_2$5
 ];
-function render$5(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$5, _hoisted_3$5);
+function render3(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_12, _hoisted_3$5);
 }
-const __unplugin_components_0$3 = { name: "fa-pencil", render: render$5 };
+VtSuccessIcon_default.render = render3;
+var VtSuccessIcon_default2 = VtSuccessIcon_default;
+var VtInfoIcon_default = {};
+var _hoisted_13 = {
+  "aria-hidden": "true",
+  focusable: "false",
+  "data-prefix": "fas",
+  "data-icon": "info-circle",
+  class: "svg-inline--fa fa-info-circle fa-w-16",
+  role: "img",
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 512 512"
+};
+var _hoisted_22 = /* @__PURE__ */ createElementVNode("path", {
+  fill: "currentColor",
+  d: "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+}, null, -1);
+var _hoisted_32 = [
+  _hoisted_22
+];
+function render4(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_13, _hoisted_32);
+}
+VtInfoIcon_default.render = render4;
+var VtInfoIcon_default2 = VtInfoIcon_default;
+var VtWarningIcon_default = {};
+var _hoisted_14 = {
+  "aria-hidden": "true",
+  focusable: "false",
+  "data-prefix": "fas",
+  "data-icon": "exclamation-circle",
+  class: "svg-inline--fa fa-exclamation-circle fa-w-16",
+  role: "img",
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 512 512"
+};
+var _hoisted_23 = /* @__PURE__ */ createElementVNode("path", {
+  fill: "currentColor",
+  d: "M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+}, null, -1);
+var _hoisted_33 = [
+  _hoisted_23
+];
+function render5(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_14, _hoisted_33);
+}
+VtWarningIcon_default.render = render5;
+var VtWarningIcon_default2 = VtWarningIcon_default;
+var VtErrorIcon_default = {};
+var _hoisted_15 = {
+  "aria-hidden": "true",
+  focusable: "false",
+  "data-prefix": "fas",
+  "data-icon": "exclamation-triangle",
+  class: "svg-inline--fa fa-exclamation-triangle fa-w-18",
+  role: "img",
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 576 512"
+};
+var _hoisted_24 = /* @__PURE__ */ createElementVNode("path", {
+  fill: "currentColor",
+  d: "M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+}, null, -1);
+var _hoisted_34 = [
+  _hoisted_24
+];
+function render6(_ctx, _cache) {
+  return openBlock(), createElementBlock("svg", _hoisted_15, _hoisted_34);
+}
+VtErrorIcon_default.render = render6;
+var VtErrorIcon_default2 = VtErrorIcon_default;
+var VtIcon_default = defineComponent({
+  name: "VtIcon",
+  props: propValidators_default.ICON,
+  computed: {
+    customIconChildren() {
+      return hasProp(this.customIcon, "iconChildren") ? this.trimValue(this.customIcon.iconChildren) : "";
+    },
+    customIconClass() {
+      if (isString(this.customIcon)) {
+        return this.trimValue(this.customIcon);
+      } else if (hasProp(this.customIcon, "iconClass")) {
+        return this.trimValue(this.customIcon.iconClass);
+      }
+      return "";
+    },
+    customIconTag() {
+      if (hasProp(this.customIcon, "iconTag")) {
+        return this.trimValue(this.customIcon.iconTag, "i");
+      }
+      return "i";
+    },
+    hasCustomIcon() {
+      return this.customIconClass.length > 0;
+    },
+    component() {
+      if (this.hasCustomIcon) {
+        return this.customIconTag;
+      }
+      if (isToastContent(this.customIcon)) {
+        return getVueComponentFromObj(this.customIcon);
+      }
+      return this.iconTypeComponent;
+    },
+    iconTypeComponent() {
+      const types = {
+        [TYPE.DEFAULT]: VtInfoIcon_default2,
+        [TYPE.INFO]: VtInfoIcon_default2,
+        [TYPE.SUCCESS]: VtSuccessIcon_default2,
+        [TYPE.ERROR]: VtErrorIcon_default2,
+        [TYPE.WARNING]: VtWarningIcon_default2
+      };
+      return types[this.type];
+    },
+    iconClasses() {
+      const classes = [`${VT_NAMESPACE}__icon`];
+      if (this.hasCustomIcon) {
+        return classes.concat(this.customIconClass);
+      }
+      return classes;
+    }
+  },
+  methods: {
+    trimValue(value, empty = "") {
+      return isNonEmptyString(value) ? value.trim() : empty;
+    }
+  }
+});
+function render7(_ctx, _cache) {
+  return openBlock(), createBlock(resolveDynamicComponent(_ctx.component), {
+    class: normalizeClass(_ctx.iconClasses)
+  }, {
+    default: withCtx(() => [
+      createTextVNode(toDisplayString$1(_ctx.customIconChildren), 1)
+    ]),
+    _: 1
+  }, 8, ["class"]);
+}
+VtIcon_default.render = render7;
+var VtIcon_default2 = VtIcon_default;
+var VtToast_default = defineComponent({
+  name: "VtToast",
+  components: { ProgressBar: VtProgressBar_default2, CloseButton: VtCloseButton_default2, Icon: VtIcon_default2 },
+  inheritAttrs: false,
+  props: Object.assign({}, propValidators_default.CORE_TOAST, propValidators_default.TOAST),
+  data() {
+    const data = {
+      isRunning: true,
+      disableTransitions: false,
+      beingDragged: false,
+      dragStart: 0,
+      dragPos: { x: 0, y: 0 },
+      dragRect: {}
+    };
+    return data;
+  },
+  computed: {
+    classes() {
+      const classes = [
+        `${VT_NAMESPACE}__toast`,
+        `${VT_NAMESPACE}__toast--${this.type}`,
+        `${this.position}`
+      ].concat(this.toastClassName);
+      if (this.disableTransitions) {
+        classes.push("disable-transition");
+      }
+      if (this.rtl) {
+        classes.push(`${VT_NAMESPACE}__toast--rtl`);
+      }
+      return classes;
+    },
+    bodyClasses() {
+      const classes = [
+        `${VT_NAMESPACE}__toast-${isString(this.content) ? "body" : "component-body"}`
+      ].concat(this.bodyClassName);
+      return classes;
+    },
+    draggableStyle() {
+      if (this.dragStart === this.dragPos.x) {
+        return {};
+      } else if (this.beingDragged) {
+        return {
+          transform: `translateX(${this.dragDelta}px)`,
+          opacity: 1 - Math.abs(this.dragDelta / this.removalDistance)
+        };
+      } else {
+        return {
+          transition: "transform 0.2s, opacity 0.2s",
+          transform: "translateX(0)",
+          opacity: 1
+        };
+      }
+    },
+    dragDelta() {
+      return this.beingDragged ? this.dragPos.x - this.dragStart : 0;
+    },
+    removalDistance() {
+      if (isDOMRect(this.dragRect)) {
+        return (this.dragRect.right - this.dragRect.left) * this.draggablePercent;
+      }
+      return 0;
+    }
+  },
+  mounted() {
+    if (this.draggable) {
+      this.draggableSetup();
+    }
+    if (this.pauseOnFocusLoss) {
+      this.focusSetup();
+    }
+  },
+  beforeUnmount() {
+    if (this.draggable) {
+      this.draggableCleanup();
+    }
+    if (this.pauseOnFocusLoss) {
+      this.focusCleanup();
+    }
+  },
+  methods: {
+    hasProp,
+    getVueComponentFromObj,
+    closeToast() {
+      this.eventBus.emit(EVENTS.DISMISS, this.id);
+    },
+    clickHandler() {
+      if (this.onClick) {
+        this.onClick(this.closeToast);
+      }
+      if (this.closeOnClick) {
+        if (!this.beingDragged || this.dragStart === this.dragPos.x) {
+          this.closeToast();
+        }
+      }
+    },
+    timeoutHandler() {
+      this.closeToast();
+    },
+    hoverPause() {
+      if (this.pauseOnHover) {
+        this.isRunning = false;
+      }
+    },
+    hoverPlay() {
+      if (this.pauseOnHover) {
+        this.isRunning = true;
+      }
+    },
+    focusPause() {
+      this.isRunning = false;
+    },
+    focusPlay() {
+      this.isRunning = true;
+    },
+    focusSetup() {
+      addEventListener("blur", this.focusPause);
+      addEventListener("focus", this.focusPlay);
+    },
+    focusCleanup() {
+      removeEventListener("blur", this.focusPause);
+      removeEventListener("focus", this.focusPlay);
+    },
+    draggableSetup() {
+      const element = this.$el;
+      element.addEventListener("touchstart", this.onDragStart, {
+        passive: true
+      });
+      element.addEventListener("mousedown", this.onDragStart);
+      addEventListener("touchmove", this.onDragMove, { passive: false });
+      addEventListener("mousemove", this.onDragMove);
+      addEventListener("touchend", this.onDragEnd);
+      addEventListener("mouseup", this.onDragEnd);
+    },
+    draggableCleanup() {
+      const element = this.$el;
+      element.removeEventListener("touchstart", this.onDragStart);
+      element.removeEventListener("mousedown", this.onDragStart);
+      removeEventListener("touchmove", this.onDragMove);
+      removeEventListener("mousemove", this.onDragMove);
+      removeEventListener("touchend", this.onDragEnd);
+      removeEventListener("mouseup", this.onDragEnd);
+    },
+    onDragStart(event) {
+      this.beingDragged = true;
+      this.dragPos = { x: getX(event), y: getY(event) };
+      this.dragStart = getX(event);
+      this.dragRect = this.$el.getBoundingClientRect();
+    },
+    onDragMove(event) {
+      if (this.beingDragged) {
+        event.preventDefault();
+        if (this.isRunning) {
+          this.isRunning = false;
+        }
+        this.dragPos = { x: getX(event), y: getY(event) };
+      }
+    },
+    onDragEnd() {
+      if (this.beingDragged) {
+        if (Math.abs(this.dragDelta) >= this.removalDistance) {
+          this.disableTransitions = true;
+          this.$nextTick(() => this.closeToast());
+        } else {
+          setTimeout(() => {
+            this.beingDragged = false;
+            if (isDOMRect(this.dragRect) && this.pauseOnHover && this.dragRect.bottom >= this.dragPos.y && this.dragPos.y >= this.dragRect.top && this.dragRect.left <= this.dragPos.x && this.dragPos.x <= this.dragRect.right) {
+              this.isRunning = false;
+            } else {
+              this.isRunning = true;
+            }
+          });
+        }
+      }
+    }
+  }
+});
+var _hoisted_16 = ["role"];
+function render8(_ctx, _cache) {
+  const _component_Icon = resolveComponent("Icon");
+  const _component_CloseButton = resolveComponent("CloseButton");
+  const _component_ProgressBar = resolveComponent("ProgressBar");
+  return openBlock(), createElementBlock("div", {
+    class: normalizeClass(_ctx.classes),
+    style: normalizeStyle(_ctx.draggableStyle),
+    onClick: _cache[0] || (_cache[0] = (...args) => _ctx.clickHandler && _ctx.clickHandler(...args)),
+    onMouseenter: _cache[1] || (_cache[1] = (...args) => _ctx.hoverPause && _ctx.hoverPause(...args)),
+    onMouseleave: _cache[2] || (_cache[2] = (...args) => _ctx.hoverPlay && _ctx.hoverPlay(...args))
+  }, [
+    _ctx.icon ? (openBlock(), createBlock(_component_Icon, {
+      key: 0,
+      "custom-icon": _ctx.icon,
+      type: _ctx.type
+    }, null, 8, ["custom-icon", "type"])) : createCommentVNode("v-if", true),
+    createElementVNode("div", {
+      role: _ctx.accessibility.toastRole || "alert",
+      class: normalizeClass(_ctx.bodyClasses)
+    }, [
+      typeof _ctx.content === "string" ? (openBlock(), createElementBlock(Fragment$1, { key: 0 }, [
+        createTextVNode(toDisplayString$1(_ctx.content), 1)
+      ], 2112)) : (openBlock(), createBlock(resolveDynamicComponent(_ctx.getVueComponentFromObj(_ctx.content)), mergeProps({
+        key: 1,
+        "toast-id": _ctx.id
+      }, _ctx.hasProp(_ctx.content, "props") ? _ctx.content.props : {}, toHandlers(_ctx.hasProp(_ctx.content, "listeners") ? _ctx.content.listeners : {}), { onCloseToast: _ctx.closeToast }), null, 16, ["toast-id", "onCloseToast"]))
+    ], 10, _hoisted_16),
+    !!_ctx.closeButton ? (openBlock(), createBlock(_component_CloseButton, {
+      key: 1,
+      component: _ctx.closeButton,
+      "class-names": _ctx.closeButtonClassName,
+      "show-on-hover": _ctx.showCloseButtonOnHover,
+      "aria-label": _ctx.accessibility.closeButtonLabel,
+      onClick: withModifiers(_ctx.closeToast, ["stop"])
+    }, null, 8, ["component", "class-names", "show-on-hover", "aria-label", "onClick"])) : createCommentVNode("v-if", true),
+    _ctx.timeout ? (openBlock(), createBlock(_component_ProgressBar, {
+      key: 2,
+      "is-running": _ctx.isRunning,
+      "hide-progress-bar": _ctx.hideProgressBar,
+      timeout: _ctx.timeout,
+      onCloseToast: _ctx.timeoutHandler
+    }, null, 8, ["is-running", "hide-progress-bar", "timeout", "onCloseToast"])) : createCommentVNode("v-if", true)
+  ], 38);
+}
+VtToast_default.render = render8;
+var VtToast_default2 = VtToast_default;
+var VtTransition_default = defineComponent({
+  name: "VtTransition",
+  props: propValidators_default.TRANSITION,
+  emits: ["leave"],
+  methods: {
+    hasProp,
+    leave(el) {
+      if (el instanceof HTMLElement) {
+        el.style.left = el.offsetLeft + "px";
+        el.style.top = el.offsetTop + "px";
+        el.style.width = getComputedStyle(el).width;
+        el.style.position = "absolute";
+      }
+    }
+  }
+});
+function render9(_ctx, _cache) {
+  return openBlock(), createBlock(TransitionGroup, {
+    tag: "div",
+    "enter-active-class": _ctx.transition.enter ? _ctx.transition.enter : `${_ctx.transition}-enter-active`,
+    "move-class": _ctx.transition.move ? _ctx.transition.move : `${_ctx.transition}-move`,
+    "leave-active-class": _ctx.transition.leave ? _ctx.transition.leave : `${_ctx.transition}-leave-active`,
+    onLeave: _ctx.leave
+  }, {
+    default: withCtx(() => [
+      renderSlot(_ctx.$slots, "default")
+    ]),
+    _: 3
+  }, 8, ["enter-active-class", "move-class", "leave-active-class", "onLeave"]);
+}
+VtTransition_default.render = render9;
+var VtTransition_default2 = VtTransition_default;
+var VtToastContainer_default = defineComponent({
+  name: "VueToastification",
+  devtools: {
+    hide: true
+  },
+  components: { Toast: VtToast_default2, VtTransition: VtTransition_default2 },
+  props: Object.assign({}, propValidators_default.CORE_TOAST, propValidators_default.CONTAINER, propValidators_default.TRANSITION),
+  data() {
+    const data = {
+      count: 0,
+      positions: Object.values(POSITION),
+      toasts: {},
+      defaults: {}
+    };
+    return data;
+  },
+  computed: {
+    toastArray() {
+      return Object.values(this.toasts);
+    },
+    filteredToasts() {
+      return this.defaults.filterToasts(this.toastArray);
+    }
+  },
+  beforeMount() {
+    const events = this.eventBus;
+    events.on(EVENTS.ADD, this.addToast);
+    events.on(EVENTS.CLEAR, this.clearToasts);
+    events.on(EVENTS.DISMISS, this.dismissToast);
+    events.on(EVENTS.UPDATE, this.updateToast);
+    events.on(EVENTS.UPDATE_DEFAULTS, this.updateDefaults);
+    this.defaults = this.$props;
+  },
+  mounted() {
+    this.setup(this.container);
+  },
+  methods: {
+    async setup(container) {
+      if (isFunction(container)) {
+        container = await container();
+      }
+      removeElement(this.$el);
+      container.appendChild(this.$el);
+    },
+    setToast(props) {
+      if (!isUndefined(props.id)) {
+        this.toasts[props.id] = props;
+      }
+    },
+    addToast(params) {
+      params.content = normalizeToastComponent(params.content);
+      const props = Object.assign({}, this.defaults, params.type && this.defaults.toastDefaults && this.defaults.toastDefaults[params.type], params);
+      const toast = this.defaults.filterBeforeCreate(props, this.toastArray);
+      toast && this.setToast(toast);
+    },
+    dismissToast(id) {
+      const toast = this.toasts[id];
+      if (!isUndefined(toast) && !isUndefined(toast.onClose)) {
+        toast.onClose();
+      }
+      delete this.toasts[id];
+    },
+    clearToasts() {
+      Object.keys(this.toasts).forEach((id) => {
+        this.dismissToast(id);
+      });
+    },
+    getPositionToasts(position) {
+      const toasts = this.filteredToasts.filter((toast) => toast.position === position).slice(0, this.defaults.maxToasts);
+      return this.defaults.newestOnTop ? toasts.reverse() : toasts;
+    },
+    updateDefaults(update) {
+      if (!isUndefined(update.container)) {
+        this.setup(update.container);
+      }
+      this.defaults = Object.assign({}, this.defaults, update);
+    },
+    updateToast({
+      id,
+      options,
+      create
+    }) {
+      if (this.toasts[id]) {
+        if (options.timeout && options.timeout === this.toasts[id].timeout) {
+          options.timeout++;
+        }
+        this.setToast(Object.assign({}, this.toasts[id], options));
+      } else if (create) {
+        this.addToast(Object.assign({}, { id }, options));
+      }
+    },
+    getClasses(position) {
+      const classes = [`${VT_NAMESPACE}__container`, position];
+      return classes.concat(this.defaults.containerClassName);
+    }
+  }
+});
+function render10(_ctx, _cache) {
+  const _component_Toast = resolveComponent("Toast");
+  const _component_VtTransition = resolveComponent("VtTransition");
+  return openBlock(), createElementBlock("div", null, [
+    (openBlock(true), createElementBlock(Fragment$1, null, renderList(_ctx.positions, (pos) => {
+      return openBlock(), createElementBlock("div", { key: pos }, [
+        createVNode(_component_VtTransition, {
+          transition: _ctx.defaults.transition,
+          class: normalizeClass(_ctx.getClasses(pos))
+        }, {
+          default: withCtx(() => [
+            (openBlock(true), createElementBlock(Fragment$1, null, renderList(_ctx.getPositionToasts(pos), (toast) => {
+              return openBlock(), createBlock(_component_Toast, mergeProps({
+                key: toast.id
+              }, toast), null, 16);
+            }), 128))
+          ]),
+          _: 2
+        }, 1032, ["transition", "class"])
+      ]);
+    }), 128))
+  ]);
+}
+VtToastContainer_default.render = render10;
+var createMockToastInterface = () => {
+  const toast = () => console.warn(`[${VT_NAMESPACE}] This plugin does not support SSR!`);
+  return new Proxy(toast, {
+    get() {
+      return toast;
+    }
+  });
+};
+function createToastInterface(optionsOrEventBus) {
+  {
+    return createMockToastInterface();
+  }
+}
+var toastInjectionKey = Symbol("VueToastification");
+var globalEventBus = new EventBus();
+var VueToastificationPlugin = (App, options) => {
+  if ((options == null ? void 0 : options.shareAppContext) === true) {
+    options.shareAppContext = App;
+  }
+  const inter = createToastInterface(__spreadValues$1({
+    eventBus: globalEventBus
+  }, options));
+  App.provide(toastInjectionKey, inter);
+};
+var useToast = (eventBus) => {
+  if (eventBus) {
+    return createToastInterface();
+  }
+  const toast = getCurrentInstance() ? inject(toastInjectionKey, void 0) : void 0;
+  return toast ? toast : createToastInterface();
+};
+var src_default = VueToastificationPlugin;
 const useLoading = defineStore("loading", {
   state: () => ({
     state: false
@@ -13490,7 +14398,7 @@ const _routes = [
     meta: meta$b,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/document-driven.9056d590.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/document-driven.bc9bc7ae.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-404",
@@ -13500,7 +14408,7 @@ const _routes = [
     meta: meta$a,
     alias: (meta$a == null ? void 0 : meta$a.alias) || [],
     redirect: (meta$a == null ? void 0 : meta$a.redirect) || void 0,
-    component: () => import('./_nuxt/404.13d15aaa.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/404.5f638f21.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-blank",
@@ -13510,7 +14418,7 @@ const _routes = [
     meta: meta$9,
     alias: (meta$9 == null ? void 0 : meta$9.alias) || [],
     redirect: (meta$9 == null ? void 0 : meta$9.redirect) || void 0,
-    component: () => import('./_nuxt/blank.82c24d8a.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/blank.38804fee.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-dashboard",
@@ -13520,7 +14428,7 @@ const _routes = [
     meta: meta$8,
     alias: (meta$8 == null ? void 0 : meta$8.alias) || [],
     redirect: (meta$8 == null ? void 0 : meta$8.redirect) || void 0,
-    component: () => import('./_nuxt/index.af2c2847.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.b862038f.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-getting-started",
@@ -13530,7 +14438,7 @@ const _routes = [
     meta: meta$7,
     alias: (meta$7 == null ? void 0 : meta$7.alias) || [],
     redirect: (meta$7 == null ? void 0 : meta$7.redirect) || void 0,
-    component: () => import('./_nuxt/getting-started.7176e9eb.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/getting-started.3855e2e3.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-post-slut",
@@ -13540,7 +14448,7 @@ const _routes = [
     meta: meta$6,
     alias: (meta$6 == null ? void 0 : meta$6.alias) || [],
     redirect: (meta$6 == null ? void 0 : meta$6.redirect) || void 0,
-    component: () => import('./_nuxt/_slut_.08aec233.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/_slut_.6a93ad0a.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-post",
@@ -13550,7 +14458,7 @@ const _routes = [
     meta: meta$5,
     alias: (meta$5 == null ? void 0 : meta$5.alias) || [],
     redirect: (meta$5 == null ? void 0 : meta$5.redirect) || void 0,
-    component: () => import('./_nuxt/index.c74cee44.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.b82b68ca.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-setting",
@@ -13560,7 +14468,7 @@ const _routes = [
     meta: meta$4,
     alias: (meta$4 == null ? void 0 : meta$4.alias) || [],
     redirect: (meta$4 == null ? void 0 : meta$4.redirect) || void 0,
-    component: () => import('./_nuxt/setting.c038ee61.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/setting.3ca3dd66.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-test",
@@ -13570,7 +14478,7 @@ const _routes = [
     meta: meta$3,
     alias: (meta$3 == null ? void 0 : meta$3.alias) || [],
     redirect: (meta$3 == null ? void 0 : meta$3.redirect) || void 0,
-    component: () => import('./_nuxt/test.c87fdd20.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/test.1c44b8be.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "index",
@@ -13580,7 +14488,7 @@ const _routes = [
     meta: meta$2,
     alias: (meta$2 == null ? void 0 : meta$2.alias) || [],
     redirect: (meta$2 == null ? void 0 : meta$2.redirect) || void 0,
-    component: () => import('./_nuxt/index.876a7552.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.f6e58d5f.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "owner-auth-login",
@@ -13590,7 +14498,7 @@ const _routes = [
     meta: meta$1,
     alias: (meta$1 == null ? void 0 : meta$1.alias) || [],
     redirect: (meta$1 == null ? void 0 : meta$1.redirect) || void 0,
-    component: () => import('./_nuxt/login.f056f7da.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/login.b2939a9a.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "owner",
@@ -13600,7 +14508,7 @@ const _routes = [
     meta,
     alias: (meta == null ? void 0 : meta.alias) || [],
     redirect: (meta == null ? void 0 : meta.redirect) || void 0,
-    component: () => import('./_nuxt/index.6a306a89.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.086abc71.mjs').then((m2) => m2.default || m2)
   }
 ];
 const configRouterOptions = {};
@@ -15038,7 +15946,7 @@ const plugins_utils_ts_EEhlE5KdlH = defineNuxtPlugin(({ provide: provide2 }) => 
   });
 });
 const plugins_toast_ts_ysMjUcU7eJ = defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(Toast, {
+  nuxtApp.vueApp.use(src_default, {
     transition: "Vue-Toastification__bounce",
     maxToasts: 20,
     newestOnTop: true,
@@ -15171,7 +16079,7 @@ const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.abf7113f.mjs').then((r2) => r2.default || r2));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.106611fa.mjs').then((r2) => r2.default || r2));
     const nuxtApp = useNuxtApp();
     provide("_route", useRoute());
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");

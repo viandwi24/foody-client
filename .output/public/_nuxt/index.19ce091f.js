@@ -1,1 +1,0 @@
-import{al as o}from"./entry.be97df1d.js";const{Axios:a,AxiosError:s,CanceledError:e,isCancel:i,CancelToken:l,VERSION:n,all:x,Cancel:c,isAxiosError:t,spread:A,toFormData:m,AxiosHeaders:C,formToJSON:E}=o;export{s as A};

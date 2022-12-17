@@ -1,1 +1,0 @@
-import{B as e,o as c,b as t}from"./entry.be97df1d.js";const o={},n={class:"fixed bg-black opacity-70 z-50 top-0 left-0 w-screen h-screen"};function s(_,r){return c(),t("div",n)}const f=e(o,[["render",s]]);export{f as default};

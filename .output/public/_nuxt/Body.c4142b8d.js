@@ -1,0 +1,1 @@
+import{B as e,o as r,b as t,r as s}from"./entry.6b804e22.js";const a={},c={class:"bg-gray-100/[0.8] dark:bg-slate-800/[0.8] backdrop-blur supports-backdrop-blur:bg-white/60 p-4 rounded overflow-y-auto"};function n(o,_){return r(),t("div",c,[s(o.$slots,"default")])}const l=e(a,[["render",n]]);export{l as default};

@@ -1,1 +1,0 @@
-import{B as r,o as t,b as o,r as s}from"./entry.58e3a4f3.js";const a={},c={class:"card-footer px-6 py-2 text-sm bg-white dark:bg-slate-800 border-t border-gray-900/10 dark:border-gray-50/[0.2]"};function n(e,d){return t(),o("div",c,[s(e.$slots,"default")])}const l=r(a,[["render",n]]);export{l as default};

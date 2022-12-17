@@ -1,1 +1,0 @@
-import{a as o,o as s,b as a,r,S as n,x as c}from"./entry.58e3a4f3.js";const l={class:"text-xs font-bold text-center mb-2"},i=o({__name:"Header",props:{text:{type:String,default:""}},setup(e){return(t,d)=>(s(),a("div",l,[r(t.$slots,"default",{},()=>[n(c(e.text),1)])]))}});export{i as _};

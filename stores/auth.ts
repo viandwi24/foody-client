@@ -24,12 +24,15 @@ export const useAuth = defineStore('auth', {
       const api = useApi()
       try {
         const res = await api.create(Api.Auth.Login({ ...data }))
-        if (res.status === 200 && res.data.token) {
+        if (res.status === 201 && res.data.token) {
           console.log('res.data.token', res.data.token)
           this.updateWithToken(res.data.token)
           console.log(res, await this.fetchMe())
           this.isLoggedIn = true
         }
+        // window.location.href = '/owner'
+        // router.replace({ name: 'owner' })
+        // router.push('/owner')
         router.push('/owner')
       } catch (err) {
         console.log(err)

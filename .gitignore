@@ -8,9 +8,9 @@ nuxt.d.ts
 node_modules
 
 # build or generate
-.nuxt
-dist
-.output
+# .nuxt
+# dist
+# .output
 
 # IDE
 .idea

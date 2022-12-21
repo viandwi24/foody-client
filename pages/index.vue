@@ -24,6 +24,7 @@ const menus = ref<Menu[]>([])
 
 // cart
 const cart = useCart()
+const { socket } = useSocket()
 
 // funcs
 const fetch = async () => {
@@ -36,6 +37,7 @@ const fetch = async () => {
 // lifecycle
 onMounted(() => {
   fetch()
+  console.log('socket', socket)
 })
 </script>
 

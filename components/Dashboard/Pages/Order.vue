@@ -11,6 +11,7 @@ import Table from '~~/components/Table.vue'
 const loading = useLoading()
 const toast = useToast()
 const api = useApi()
+const { socket } = useSocket()
 
 // tables1
 const table1 = ref<InstanceType<typeof Table> | null>(null)
@@ -136,12 +137,22 @@ const modalConfirm = async () => {
   table2.value?.fetch()
 }
 
+const onNewOrderNotif = () => {
+  table1.value?.fetch()
+  table2.value?.fetch()
+}
+
 // lifecycle
 onMounted(() => {
   // useLoading().show()
   // setTimeout(() => {
   //   useLoading().hide()
   // }, 1000)
+  socket.value?.on('new:order', onNewOrderNotif)
+})
+
+onBeforeUnmount(() => {
+  socket.value?.off('new:order', onNewOrderNotif)
 })
 </script>
 

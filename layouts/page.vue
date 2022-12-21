@@ -16,6 +16,7 @@ const api = useApi()
 
 // funcs
 const { reset, increment, decrement } = cart
+const { socket } = useSocket()
 
 // modal checkout
 const isShowModalCheckout = ref(false)
@@ -51,6 +52,7 @@ const checkout = async () => {
     if (res.status === 201) {
       transaction.value = res.data.data
       isCheckoutSuccess.value = true
+      socket.value?.emit('new:order', { data: res.data.data })
       reset()
     }
   } catch (error) {}

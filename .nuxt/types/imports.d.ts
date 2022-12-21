@@ -17,6 +17,7 @@ declare global {
   const controlledRef: typeof import('@vueuse/core')['controlledRef']
   const createError: typeof import('../../node_modules/.pnpm/nuxt3@3.0.0-rc.12-27730995.2894a75_3qgq5m7bqj7palvvc4uezrk4iq/node_modules/nuxt3/dist/app')['createError']
   const createEventHook: typeof import('@vueuse/core')['createEventHook']
+  const createEventsIO: typeof import('../../composables/useSocket')['createEventsIO']
   const createGlobalState: typeof import('@vueuse/core')['createGlobalState']
   const createInjectionState: typeof import('@vueuse/core')['createInjectionState']
   const createReactiveFn: typeof import('@vueuse/core')['createReactiveFn']
@@ -259,6 +260,7 @@ declare global {
   const useSessionStorage: typeof import('@vueuse/core')['useSessionStorage']
   const useShare: typeof import('@vueuse/core')['useShare']
   const useSlots: typeof import('vue')['useSlots']
+  const useSocket: typeof import('../../composables/useSocket')['useSocket']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
   const useSpeechSynthesis: typeof import('@vueuse/core')['useSpeechSynthesis']
   const useState: typeof import('../../node_modules/.pnpm/nuxt3@3.0.0-rc.12-27730995.2894a75_3qgq5m7bqj7palvvc4uezrk4iq/node_modules/nuxt3/dist/app')['useState']
@@ -341,6 +343,7 @@ declare module '@vue/runtime-core' {
     readonly controlledRef: UnwrapRef<typeof import('@vueuse/core')['controlledRef']>
     readonly createError: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt3@3.0.0-rc.12-27730995.2894a75_3qgq5m7bqj7palvvc4uezrk4iq/node_modules/nuxt3/dist/app')['createError']>
     readonly createEventHook: UnwrapRef<typeof import('@vueuse/core')['createEventHook']>
+    readonly createEventsIO: UnwrapRef<typeof import('../../composables/useSocket')['createEventsIO']>
     readonly createGlobalState: UnwrapRef<typeof import('@vueuse/core')['createGlobalState']>
     readonly createInjectionState: UnwrapRef<typeof import('@vueuse/core')['createInjectionState']>
     readonly createReactiveFn: UnwrapRef<typeof import('@vueuse/core')['createReactiveFn']>
@@ -583,6 +586,7 @@ declare module '@vue/runtime-core' {
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSocket: UnwrapRef<typeof import('../../composables/useSocket')['useSocket']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
     readonly useState: UnwrapRef<typeof import('../../node_modules/.pnpm/nuxt3@3.0.0-rc.12-27730995.2894a75_3qgq5m7bqj7palvvc4uezrk4iq/node_modules/nuxt3/dist/app')['useState']>

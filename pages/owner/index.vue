@@ -6,11 +6,14 @@ import {
   TabPanels,
   TabPanel,
 } from '@headlessui/vue'
+import { useToast } from 'vue-toastification'
 import { capitalize } from '~/utils/str'
 const screen = useScreen()
 
 // composable
 // const { t } = useLang()
+const { socket } = useSocket()
+const toast = useToast()
 
 // compiler macro
 definePageMeta({
@@ -21,6 +24,12 @@ useHead(() => ({
   titleTemplate: '',
   title: capitalize('Foody Owner'),
 }))
+
+const tab = ref(null)
+const selectedTab = ref(0)
+const changeTab = (index: number) => {
+  selectedTab.value = index
+}
 
 // menus
 const subpages = shallowRef([
@@ -40,6 +49,26 @@ const subpages = shallowRef([
     component: resolveComponent('DashboardPagesTransactions'),
   },
 ])
+
+const onNewOrderNotif = (data: any) => {
+  console.log('new order', data)
+  if (selectedTab.value !== 1) {
+    toast.info('New order received!, click to navigate orders tab', {
+      onClick: () => {
+        changeTab(1)
+      },
+    })
+  } else {
+    toast.success('New order received!')
+  }
+}
+
+onMounted(() => {
+  socket.value?.on('new:order', onNewOrderNotif)
+})
+onBeforeUnmount(() => {
+  socket.value?.off('new:order', onNewOrderNotif)
+})
 </script>
 
 <template>
@@ -50,9 +79,12 @@ const subpages = shallowRef([
     <PageBody>
       <PageSection>
         <TabGroup
+          ref="tab"
+          :selectedIndex="selectedTab"
           as="div"
           class="flex flex-col"
           :vertical="screen.higherThan(Size.MEDIUM)"
+          @change="changeTab"
         >
           <TabList class="w-auto md:w-1/6 flex space-x-4 rounded-lg mb-2">
             <HeadlessUiTab

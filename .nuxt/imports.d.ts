@@ -7,6 +7,7 @@ export { useApi } from '../composables/useApi';
 export { useHttp } from '../composables/useHttp';
 export { useLang } from '../composables/useLang';
 export { Size, defaultScreenConfig, useScreen } from '../composables/useScreen';
+export { useSocket, createEventsIO } from '../composables/useSocket';
 export { useSticky } from '../composables/useSticky';
 export { useSyncProps } from '../composables/useSyncProps';
 export { usePinia } from '../node_modules/.pnpm/@pinia+nuxt@0.4.2_arz4dztosvwy2ghjrlh2wdhejm/node_modules/@pinia/nuxt/dist/runtime/composables';

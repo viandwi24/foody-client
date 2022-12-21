@@ -71,7 +71,7 @@
         "node_modules/.pnpm/@intlify+devtools-if@9.2.2/node_modules/@intlify/devtools-if/dist/devtools-if.esm-bundler"
       ],
       "vue-i18n": [
-        "node_modules/.pnpm/vue-i18n@9.2.2_vue@3.2.39/node_modules/vue-i18n/dist/vue-i18n.runtime.esm-bundler"
+        "node_modules/.pnpm/vue-i18n@9.2.2_vue@3.2.39/node_modules/vue-i18n/dist/vue-i18n.esm-bundler"
       ],
       "pinia": [
         "node_modules/.pnpm/pinia@2.0.22_arz4dztosvwy2ghjrlh2wdhejm/node_modules/pinia/dist/pinia"

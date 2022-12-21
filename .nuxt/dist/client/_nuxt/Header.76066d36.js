@@ -1,1 +1,0 @@
-import{B as o,T as s,o as t,b as n,r}from"./entry.fd4c3c58.js";const a={class:"lg:px-8 px-4 mb-6"};function c(e,_,p,l,d,f){return t(),n("div",a,[r(e.$slots,"default")])}const m=o(s,[["render",c]]);export{m as default};

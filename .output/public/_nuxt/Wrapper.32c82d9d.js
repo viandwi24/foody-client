@@ -1,1 +1,0 @@
-import{B as t,o,b as s,r as n}from"./entry.fd4c3c58.js";const r={},c={class:"flex-1 relative py-8"};function _(e,a){return o(),s("div",c,[n(e.$slots,"default")])}const f=t(r,[["render",_]]);export{f as default};

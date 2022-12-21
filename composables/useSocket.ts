@@ -1,7 +1,8 @@
 import { io, Socket } from 'socket.io-client'
 import { DefaultEventsMap } from '@socket.io/component-emitter'
 
-const url = 'ws://localhost:4000'
+// const url = 'ws://localhost:4000'
+const url = 'wss://foody.viandwi24.site'
 
 // define window.io
 declare global {

@@ -1398,8 +1398,8 @@ const Component = defineComponent({
   }
 });
 const layouts = {
-  dashboard: defineAsyncComponent(() => import('./_nuxt/dashboard.e36d7652.mjs').then((m2) => m2.default || m2)),
-  page: defineAsyncComponent(() => import('./_nuxt/page.4f6fdd9e.mjs').then((m2) => m2.default || m2))
+  dashboard: defineAsyncComponent(() => import('./_nuxt/dashboard.2f8dfdd8.mjs').then((m2) => m2.default || m2)),
+  page: defineAsyncComponent(() => import('./_nuxt/page.e463d478.mjs').then((m2) => m2.default || m2))
 };
 const __nuxt_component_0$1 = defineComponent({
   props: {
@@ -10673,6 +10673,11 @@ const DetailModal = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
   __proto__: null,
   default: _sfc_main$D
 }, Symbol.toStringTag, { value: "Module" }));
+const useSocket = () => {
+  return {
+    socket: computed(() => window.io)
+  };
+};
 const _hoisted_1$3 = {
   preserveAspectRatio: "xMidYMid meet",
   viewBox: "0 0 1216 1312",
@@ -10730,6 +10735,7 @@ const _sfc_main$C = /* @__PURE__ */ defineComponent({
   setup(__props) {
     useLoading();
     useToast();
+    useSocket();
     const table1 = ref(null);
     const api1 = Api.Transaction.All({ filter: { status: "pending" } });
     const columns = ref([
@@ -13433,7 +13439,7 @@ const _routes = [
     meta: meta$b,
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/document-driven.316a46a7.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/document-driven.7974d6cd.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-404",
@@ -13443,7 +13449,7 @@ const _routes = [
     meta: meta$a,
     alias: (meta$a == null ? void 0 : meta$a.alias) || [],
     redirect: (meta$a == null ? void 0 : meta$a.redirect) || void 0,
-    component: () => import('./_nuxt/404.dc11603b.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/404.7642f744.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-blank",
@@ -13453,7 +13459,7 @@ const _routes = [
     meta: meta$9,
     alias: (meta$9 == null ? void 0 : meta$9.alias) || [],
     redirect: (meta$9 == null ? void 0 : meta$9.redirect) || void 0,
-    component: () => import('./_nuxt/blank.8e434e6e.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/blank.89dcc041.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-dashboard",
@@ -13463,7 +13469,7 @@ const _routes = [
     meta: meta$8,
     alias: (meta$8 == null ? void 0 : meta$8.alias) || [],
     redirect: (meta$8 == null ? void 0 : meta$8.redirect) || void 0,
-    component: () => import('./_nuxt/index.7caa661e.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.fb66c6a3.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-getting-started",
@@ -13473,7 +13479,7 @@ const _routes = [
     meta: meta$7,
     alias: (meta$7 == null ? void 0 : meta$7.alias) || [],
     redirect: (meta$7 == null ? void 0 : meta$7.redirect) || void 0,
-    component: () => import('./_nuxt/getting-started.bb7c6d01.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/getting-started.b07c7ed7.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-post-slut",
@@ -13483,7 +13489,7 @@ const _routes = [
     meta: meta$6,
     alias: (meta$6 == null ? void 0 : meta$6.alias) || [],
     redirect: (meta$6 == null ? void 0 : meta$6.redirect) || void 0,
-    component: () => import('./_nuxt/_slut_.eeb8f757.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/_slut_.c1184cd9.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-post",
@@ -13493,7 +13499,7 @@ const _routes = [
     meta: meta$5,
     alias: (meta$5 == null ? void 0 : meta$5.alias) || [],
     redirect: (meta$5 == null ? void 0 : meta$5.redirect) || void 0,
-    component: () => import('./_nuxt/index.faae69b5.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.78ecc099.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-setting",
@@ -13503,7 +13509,7 @@ const _routes = [
     meta: meta$4,
     alias: (meta$4 == null ? void 0 : meta$4.alias) || [],
     redirect: (meta$4 == null ? void 0 : meta$4.redirect) || void 0,
-    component: () => import('./_nuxt/setting.9fb293b3.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/setting.374d3ab3.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "bak-test",
@@ -13513,7 +13519,7 @@ const _routes = [
     meta: meta$3,
     alias: (meta$3 == null ? void 0 : meta$3.alias) || [],
     redirect: (meta$3 == null ? void 0 : meta$3.redirect) || void 0,
-    component: () => import('./_nuxt/test.eea821bd.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/test.0a887df8.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "index",
@@ -13523,7 +13529,7 @@ const _routes = [
     meta: meta$2,
     alias: (meta$2 == null ? void 0 : meta$2.alias) || [],
     redirect: (meta$2 == null ? void 0 : meta$2.redirect) || void 0,
-    component: () => import('./_nuxt/index.6f82b677.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.2a0531d8.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "owner-auth-login",
@@ -13533,7 +13539,7 @@ const _routes = [
     meta: meta$1,
     alias: (meta$1 == null ? void 0 : meta$1.alias) || [],
     redirect: (meta$1 == null ? void 0 : meta$1.redirect) || void 0,
-    component: () => import('./_nuxt/login.c1cbf586.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/login.3fcb1f1b.mjs').then((m2) => m2.default || m2)
   },
   {
     name: "owner",
@@ -13543,7 +13549,7 @@ const _routes = [
     meta,
     alias: (meta == null ? void 0 : meta.alias) || [],
     redirect: (meta == null ? void 0 : meta.redirect) || void 0,
-    component: () => import('./_nuxt/index.4aa66b91.mjs').then((m2) => m2.default || m2)
+    component: () => import('./_nuxt/index.d4259ae7.mjs').then((m2) => m2.default || m2)
   }
 ];
 const configRouterOptions = {};
@@ -15114,7 +15120,7 @@ const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.223c0d9f.mjs').then((r2) => r2.default || r2));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.444334c6.mjs').then((r2) => r2.default || r2));
     const nuxtApp = useNuxtApp();
     provide("_route", useRoute());
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");
@@ -15291,5 +15297,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { _sfc_main$w as $, _sfc_main$R as A, f$1 as B, a as C, o$1 as D, w$2 as E, t$1 as F, b$2 as G, o$2 as H, u$4 as I, t as J, useCounter as K, useIdentity as L, M, _sfc_main$Q as N, useLoading as O, P$2 as P, useCart as Q, R$1 as R, _sfc_main$2 as S, useAuth as T, _sfc_main$E as U, V$1 as V, _sfc_main$C as W, _sfc_main$B as X, _export_sfc as Y, _sfc_main$v as Z, __nuxt_component_0$1 as _, useRequestEvent as a, useState as a0, useApi as a1, Api as a2, __nuxt_component_0$2 as a3, useContentHead as b, _sfc_main$1b as c, _sfc_main$1a as d, entry$1 as default, _sfc_main$19 as e, useHead as f, __nuxt_component_3 as g, _sfc_main$16 as h, useI18n as i, __nuxt_component_4$1 as j, _sfc_main$14 as k, __nuxt_component_6 as l, __nuxt_component_7 as m, _sfc_main$11 as n, __nuxt_component_1 as o, _sfc_main$Z as p, _sfc_main$Y as q, __unplugin_components_0$5 as r, _sfc_main$X as s, _sfc_main$W as t, useContent as u, __nuxt_component_4 as v, _sfc_main$U as w, _sfc_main$T as x, __nuxt_component_10 as y, _sfc_main$17 as z };
+export { _export_sfc as $, _sfc_main$R as A, f$1 as B, a as C, o$1 as D, w$2 as E, t$1 as F, b$2 as G, o$2 as H, u$4 as I, t as J, useCounter as K, useIdentity as L, M, _sfc_main$Q as N, useLoading as O, P$2 as P, useCart as Q, R$1 as R, useSocket as S, _sfc_main$2 as T, useAuth as U, V$1 as V, useToast as W, _sfc_main$E as X, _sfc_main$C as Y, _sfc_main$B as Z, __nuxt_component_0$1 as _, useRequestEvent as a, _sfc_main$v as a0, _sfc_main$w as a1, useState as a2, useApi as a3, Api as a4, __nuxt_component_0$2 as a5, useContentHead as b, _sfc_main$1b as c, _sfc_main$1a as d, entry$1 as default, _sfc_main$19 as e, useHead as f, __nuxt_component_3 as g, _sfc_main$16 as h, useI18n as i, __nuxt_component_4$1 as j, _sfc_main$14 as k, __nuxt_component_6 as l, __nuxt_component_7 as m, _sfc_main$11 as n, __nuxt_component_1 as o, _sfc_main$Z as p, _sfc_main$Y as q, __unplugin_components_0$5 as r, _sfc_main$X as s, _sfc_main$W as t, useContent as u, __nuxt_component_4 as v, _sfc_main$U as w, _sfc_main$T as x, __nuxt_component_10 as y, _sfc_main$17 as z };
 //# sourceMappingURL=server.mjs.map

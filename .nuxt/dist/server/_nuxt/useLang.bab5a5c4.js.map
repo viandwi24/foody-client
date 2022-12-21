@@ -1,1 +1,0 @@
-{"version":3,"file":"useLang.bab5a5c4.js","sources":["../../../../composables/useLang.ts"],"sourcesContent":["import { useI18n } from 'vue-i18n'\n\nexport const useLang = () => {\n  const { t } = useI18n()\n  return {\n    t,\n  }\n}\n"],"names":[],"mappings":";AAEO,MAAM,UAAU,MAAM;AACrB,QAAA,EAAE,MAAM;AACP,SAAA;AAAA,IACL;AAAA,EAAA;AAEJ;"}

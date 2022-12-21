@@ -14,6 +14,7 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/.pnpm/@nuxt+content@2.1.1/node_modules/@nuxt/content/dist/runtime/plugins/ws").default> &
   InjectionType<typeof import("../../node_modules/.pnpm/@pinia+nuxt@0.4.2_arz4dztosvwy2ghjrlh2wdhejm/node_modules/@pinia/nuxt/dist/runtime/plugin.vue3").default> &
   InjectionType<typeof import("../plugin").default> &
+  InjectionType<typeof import("../../node_modules/.pnpm/nuxt3@3.0.0-rc.12-27730995.2894a75_3qgq5m7bqj7palvvc4uezrk4iq/node_modules/nuxt3/dist/app/plugins/payload.client").default> &
   InjectionType<typeof import("../../plugins/navbar").default> &
   InjectionType<typeof import("../../plugins/utils").default> &
   InjectionType<typeof import("../../plugins/toast").default> &
